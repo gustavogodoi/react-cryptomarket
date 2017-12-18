@@ -1,4 +1,3 @@
-/*eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import styled from "styled-components";
 import * as icons from "./icons";

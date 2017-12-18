@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import reducer from "../reducers";
+import coinState from "../reducers";
 
-export default combineReducers({ reducer });
+export default combineReducers({ coinState });

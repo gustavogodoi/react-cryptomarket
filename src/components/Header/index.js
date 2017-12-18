@@ -22,7 +22,7 @@ const HeaderText = styled.div`
 const Header = () => (
   <HeaderWapper>
     <HeaderText>
-      <Link to="/">Hacker News 📰 </Link>
+      <Link to="/">Cryptocurrency Market 💰</Link>
     </HeaderText>
   </HeaderWapper>
 );

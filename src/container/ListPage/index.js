@@ -1,23 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { loadListRequest } from "../../actions/";
-import Menu from "../../components/Menu";
-import NewsList from "../../components/NewsList";
+import { loadCoinListRequest } from "../../actions/";
+import CoinList from "../../components/CoinList";
 
 export class ListPage extends Component {
   componentDidMount() {
-    this.props.loadListRequest();
+    this.props.loadCoinListRequest();
   }
 
   updateList = param => {
-    this.props.loadListRequest(param);
+    this.props.loadCoinListRequest(param);
   };
 
   render() {
     return (
       <div>
-        <Menu updateList={this.updateList} />
-        <NewsList list={this.props.list.hits} />
+        <CoinList list={this.props.list} />
       </div>
     );
   }
@@ -25,12 +23,12 @@ export class ListPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.reducer.list
+    list: state.coinState.coinList
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  loadListRequest: param => dispatch(loadListRequest(param))
+  loadCoinListRequest: param => dispatch(loadCoinListRequest(param))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListPage);

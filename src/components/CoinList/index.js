@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Story from "../Story";
+import CoinCard from "../CoinCard";
 
 const ListWrapper = styled.div`
   min-height: 300px;
@@ -20,20 +20,20 @@ const LoadingWrapper = styled.div`
   font-size: 16px;
 `;
 
-const NewsList = ({ list }) => {
-  if (!list) {
+const CoinList = ({ list }) => {
+  if (!list || !list.length) {
     return <LoadingWrapper>Loading...</LoadingWrapper>;
   }
 
   return (
     <ListWrapper>
-      {list.map(story => (
-        <ListItem key={story.objectID}>
-          <Story story={story} />
+      {list.map(coin => (
+        <ListItem key={coin.id}>
+          <CoinCard info={coin} />
         </ListItem>
       ))}
     </ListWrapper>
   );
 };
 
-export default NewsList;
+export default CoinList;

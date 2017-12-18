@@ -1,14 +1,14 @@
-import { call, put, takeLatest } from "redux-saga/effects";
-import { getListApi } from "../api/hackerNewsApi";
+import { call, put, takeLatest, takeEvery } from "redux-saga/effects";
+import { getCoinListApi } from "../api/coinMarketCapApi";
 import * as actions from "../actions";
 
-export function* fetchList({ param }) {
+export function* fetchCoinList() {
   try {
-    const list = yield call(getListApi, param);
-    yield put(actions.loadListSuccess(list, param));
+    const result = yield call(getCoinListApi);
+    yield put(actions.loadCoinListSuccess(result));
   } catch (error) {}
 }
 
-export function* getList() {
-  yield takeLatest(actions.LOAD_LIST_REQUEST, fetchList);
+export function* getCoinList() {
+  yield takeEvery(actions.LOAD_COIN_LIST_REQUEST, fetchCoinList);
 }

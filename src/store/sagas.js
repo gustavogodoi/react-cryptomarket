@@ -1,6 +1,6 @@
 import { fork, all } from "redux-saga/effects";
-import { getList } from "../sagas/";
+import { getCoinList } from "../sagas/";
 
 export default function* rootSagas() {
-  yield all([fork(getList)]);
+  yield all([fork(getCoinList)]);
 }

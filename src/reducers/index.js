@@ -1,22 +1,22 @@
 import * as actions from "../actions";
 
 const initialState = {
-  list: [],
+  coinList: {},
   loading: false
 };
 
-const reducer = (state = initialState, action) => {
+const coinState = (state = initialState, action) => {
   switch (action.type) {
-    case actions.LOAD_LIST_REQUEST:
+    case actions.LOAD_COIN_LIST_REQUEST:
       return Object.assign({}, state, { loading: true });
-    case actions.LOAD_LIST_SUCCESS:
+    case actions.LOAD_COIN_LIST_SUCCESS:
       return Object.assign({}, state, {
         loading: false,
-        list: action.result
+        coinList: action.result
       });
     default:
       return state;
   }
 };
 
-export default reducer;
+export default coinState;

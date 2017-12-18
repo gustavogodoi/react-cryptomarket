@@ -1,10 +1,6 @@
 {
-  "name": "react-hackernews",
-  "version": "1.0.0",
-  "description": "React Hacker News App",
-  "main": "index.js",
-  "author": "Gustavo Godoi",
-  "license": "MIT",
+  "name": "bitcoin",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -16,7 +12,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
-    "redux-saga": "^0.16.0",
+    "redux-saga": "1.0.0-beta.0",
     "styled-components": "^2.2.3"
   },
   "scripts": {
@@ -25,6 +21,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy":
-      "npm run build && mv build/index.html build/200.html && surge build react-hackernews.surge.sh"
+      "npm run build && mv build/index.html build/200.html && surge build bitcoin-react.surge.sh"
   }
 }
