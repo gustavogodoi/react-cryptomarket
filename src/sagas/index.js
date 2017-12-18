@@ -1,12 +1,16 @@
+import { delay } from "redux-saga";
 import { call, put, takeLatest, takeEvery } from "redux-saga/effects";
 import { getCoinListApi } from "../api/coinMarketCapApi";
 import * as actions from "../actions";
 
 export function* fetchCoinList() {
-  try {
-    const result = yield call(getCoinListApi);
-    yield put(actions.loadCoinListSuccess(result));
-  } catch (error) {}
+  while (true) {
+    try {
+      const result = yield call(getCoinListApi);
+      yield put(actions.loadCoinListSuccess(result));
+      yield delay(10000);
+    } catch (error) {}
+  }
 }
 
 export function* getCoinList() {

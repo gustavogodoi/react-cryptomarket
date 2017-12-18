@@ -8,10 +8,6 @@ export class ListPage extends Component {
     this.props.loadCoinListRequest();
   }
 
-  updateList = param => {
-    this.props.loadCoinListRequest(param);
-  };
-
   render() {
     return (
       <div>
