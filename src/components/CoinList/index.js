@@ -13,6 +13,11 @@ const ListWrapper = styled.div`
 const ListItem = styled.div`
   border: 1px solid lightgray;
   border-radius: 10px;
+  box-shadow: 1px 1px darkgrey;
+  :hover,
+  :focus {
+    box-shadow: 2px 2px darkgrey;
+  }
 `;
 
 const LoadingWrapper = styled.div`
