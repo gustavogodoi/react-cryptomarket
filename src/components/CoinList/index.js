@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Sort from "../Sort";
 import CoinCard from "../CoinCard";
 
 const ListWrapper = styled.div`
@@ -27,19 +28,22 @@ const LoadingWrapper = styled.div`
   font-size: 16px;
 `;
 
-const CoinList = ({ list }) => {
+const CoinList = ({ list, sort, updateSort }) => {
   if (!list || !list.length) {
     return <LoadingWrapper>Loading...</LoadingWrapper>;
   }
 
   return (
-    <ListWrapper>
-      {list.map(coin => (
-        <ListItem key={coin.id}>
-          <CoinCard info={coin} />
-        </ListItem>
-      ))}
-    </ListWrapper>
+    <div>
+      <Sort sort={sort} updateSort={updateSort} />
+      <ListWrapper>
+        {list.map(coin => (
+          <ListItem key={coin.id}>
+            <CoinCard info={coin} />
+          </ListItem>
+        ))}
+      </ListWrapper>
+    </div>
   );
 };
 

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { loadCoinListRequest } from "../../actions/";
+import {
+  loadCoinListRequest,
+  updateSortList,
+  getCoinList
+} from "../../actions/";
 import CoinList from "../../components/CoinList";
 
 export class ListPage extends Component {
@@ -8,10 +12,20 @@ export class ListPage extends Component {
     this.props.loadCoinListRequest();
   }
 
+  updateSort = e => {
+    //console.log(e.target.value);
+    this.props.updateSortList(e.target.value);
+    this.props.getCoinList();
+  };
+
   render() {
     return (
       <div>
-        <CoinList list={this.props.list} />
+        <CoinList
+          list={this.props.list}
+          sort={this.props.sort}
+          updateSort={this.updateSort}
+        />
       </div>
     );
   }
@@ -19,12 +33,15 @@ export class ListPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.coinState.coinList
+    list: state.coinState.coinList,
+    sort: state.coinState.sort
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  loadCoinListRequest: param => dispatch(loadCoinListRequest(param))
+  loadCoinListRequest: () => dispatch(loadCoinListRequest()),
+  updateSortList: param => dispatch(updateSortList(param)),
+  getCoinList: () => dispatch(getCoinList())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListPage);
