@@ -61,6 +61,18 @@ const CoinCap = styled.span`
 const PctChange = styled.span`
   font-weight: ${props => (props.danger ? "bold" : "normal")};
   color: ${props => (props.danger ? "red" : "green")};
+  position: relative;
+`;
+
+const Arrow = styled.div`
+  display: inline-block;
+  margin: ${props => (props.danger ? "1" : "3")}px 1px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  ${props =>
+    props.danger
+      ? "border-top: 5px solid red;"
+      : "border-bottom: 5px solid green;"};
 `;
 
 const CoinCard = ({ info }) => {
@@ -85,19 +97,19 @@ const CoinCard = ({ info }) => {
           </CardTitleWrapper>
           <MarketCap>
             <CoinCap>
-              1h:{" "}
+              1h: <Arrow danger={info.percent_change_1h < 0} />
               <PctChange danger={info.percent_change_1h < 0}>
                 {info.percent_change_1h}%
               </PctChange>
             </CoinCap>
             <CoinCap>
-              24h:{" "}
+              24h: <Arrow danger={info.percent_change_24h < 0} />
               <PctChange danger={info.percent_change_24h < 0}>
                 {info.percent_change_24h}%
               </PctChange>
             </CoinCap>
             <CoinCap>
-              7d:{" "}
+              7d: <Arrow danger={info.percent_change_7d < 0} />
               <PctChange danger={info.percent_change_7d < 0}>
                 {info.percent_change_7d}%
               </PctChange>
