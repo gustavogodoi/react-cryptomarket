@@ -4,13 +4,15 @@ import CoinCard from "../CoinCard";
 
 const ListWrapper = styled.div`
   min-height: 300px;
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
+  padding: 0 15px 30px 15px;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
 `;
 
 const ListItem = styled.div`
-  flex: 1 1 100%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 `;
 
 const LoadingWrapper = styled.div`

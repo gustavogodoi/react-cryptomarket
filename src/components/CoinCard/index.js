@@ -11,7 +11,6 @@ const CardWrapper = styled.div`
   align-items: center;
   padding: 20px;
   width: 100%;
-  max-width: 500px;
 `;
 
 const CoinImageWrapper = styled.div`

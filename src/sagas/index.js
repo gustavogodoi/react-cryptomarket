@@ -1,5 +1,5 @@
 import { delay } from "redux-saga";
-import { call, put, takeLatest, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { getCoinListApi } from "../api/coinMarketCapApi";
 import * as actions from "../actions";
 

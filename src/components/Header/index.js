@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderWapper = styled.div`
-  width: 100vw;
-  height: 100px;
+  width: 100%;
+  padding: 30px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,7 @@ const HeaderWapper = styled.div`
   }
 `;
 const HeaderText = styled.div`
+  text-align: center;
   font-size: 36px;
 `;
 
