@@ -8,7 +8,7 @@ export function* fetchCoinList() {
     try {
       const result = yield call(getCoinListApi);
       yield put(actions.loadCoinListSuccess(result));
-      yield delay(10000);
+      yield delay(60000);
     } catch (error) {}
   }
 }
