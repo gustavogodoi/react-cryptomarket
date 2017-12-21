@@ -1,4 +1,4 @@
-Follow the trend of Bitcoin and all other cryptocurrencies.
+Follow the Bitcoin trend and all other cryptocurrencies.
 
 Check: http://bitcoin-react.surge.sh/
 
