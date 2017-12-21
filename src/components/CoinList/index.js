@@ -8,7 +8,14 @@ const ListWrapper = styled.div`
   padding: 0 15px 30px 15px;
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: 1fr;
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 50px 30px 50px;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 const ListItem = styled.div`
