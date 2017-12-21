@@ -1,6 +1,5 @@
 const getCoinListApi = () => {
-  //const crossorigin = ""; //"https://cors-anywhere.herokuapp.com/";
-  const urlApi = `https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=12`;
+  const urlApi = `https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=18`;
   return fetch(urlApi, {
     mode: "cors"
   })
