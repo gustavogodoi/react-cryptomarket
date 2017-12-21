@@ -1,79 +1,19 @@
 import React from "react";
-import styled from "styled-components";
-
-const Card = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const CardWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  width: 100%;
-`;
-
-const CoinImageWrapper = styled.div`
-  padding-right: 10px;
-`;
-
-const CoinImage = styled.img``;
-
-const InfoWrapper = styled.div`
-  width: 100%;
-`;
-
-const CardTitleWrapper = styled.div`
-  display: flex;
-  padding-bottom: 5px;
-`;
-
-const CardTitle = styled.span`
-  padding-right: 10px;
-`;
-
-const Symbol = styled.span`
-  font-weight: bold;
-`;
-
-const Price = styled.span`
-  flex: 1 1 50%;
-  text-align: right;
-`;
-
-const MarketCap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-`;
-
-const CoinCap = styled.span`
-  flex: 1 1 auto;
-  padding-right: 5px;
-  :nth-child(2) {
-    text-align: center;
-  }
-  :nth-child(3) {
-    text-align: right;
-  }
-`;
-
-const PctChange = styled.span`
-  font-weight: ${props => (props.danger ? "bold" : "normal")};
-  color: ${props => (props.danger ? "red" : "green")};
-  position: relative;
-`;
-
-const Arrow = styled.div`
-  display: inline-block;
-  margin: ${props => (props.danger ? "1" : "3")}px 1px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  ${props =>
-    props.danger
-      ? "border-top: 5px solid red;"
-      : "border-bottom: 5px solid green;"};
-`;
+import {
+  Card,
+  CardWrapper,
+  CoinImageWrapper,
+  CoinImage,
+  InfoWrapper,
+  CardTitleWrapper,
+  CardTitle,
+  Symbol,
+  Price,
+  MarketCap,
+  CoinCap,
+  PctChange,
+  Arrow
+} from "./style";
 
 const CoinCard = ({ info }) => {
   const priceEur = info.price_eur

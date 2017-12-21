@@ -1,32 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import * as icons from "./icons";
-
-const FooterWapper = styled.div`
-  width: 100%;
-  padding: 30px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  a {
-    text-decoration: none;
-    color: black;
-  }
-`;
-
-const Author = styled.div`
-  padding-right: 15px;
-  color: darkgray;
-`;
-
-const Social = styled.div`
-  padding-right: 10px;
-`;
-
-const SocialIcon = styled.img`
-  width: 18px;
-`;
+import { FooterWapper, Author, Social, SocialIcon } from "./style";
 
 const Footer = () => (
   <FooterWapper>

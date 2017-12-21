@@ -1,19 +1,6 @@
 /*eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
-import styled from "styled-components";
-
-const SortWrapper = styled.div`
-  padding: 0 0 30px 30px;
-  font-size: 13px;
-`;
-
-const Label = styled.span`
-  padding-right: 5px;
-`;
-
-const Select = styled.select`
-  width: 100px;
-`;
+import { SortWrapper, Label, Select } from "./style";
 
 const Sort = ({ sort, updateSort }) => (
   <SortWrapper>
