@@ -17,7 +17,11 @@ const HeaderWapper = styled.div`
 `;
 const HeaderText = styled.div`
   text-align: center;
-  font-size: 36px;
+  font-size: 24px;
+
+  @media (min-width: 600px) {
+    font-size: 36px;
+  }
 `;
 
 const Header = () => (

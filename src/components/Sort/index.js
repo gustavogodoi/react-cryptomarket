@@ -3,8 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const SortWrapper = styled.div`
-  padding: 0 0 20px 20px;
-  max-width: 200px;
+  padding: 0 0 30px 30px;
+  font-size: 13px;
 `;
 
 const Label = styled.span`

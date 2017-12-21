@@ -3,6 +3,10 @@ import styled from "styled-components";
 import Sort from "../Sort";
 import CoinCard from "../CoinCard";
 
+const List = styled.div`
+  padding-top: 10px;
+`;
+
 const ListWrapper = styled.div`
   min-height: 300px;
   padding: 0 15px 30px 15px;
@@ -41,7 +45,7 @@ const CoinList = ({ list, sort, updateSort }) => {
   }
 
   return (
-    <div>
+    <List>
       <Sort sort={sort} updateSort={updateSort} />
       <ListWrapper>
         {list.map(coin => (
@@ -50,7 +54,7 @@ const CoinList = ({ list, sort, updateSort }) => {
           </ListItem>
         ))}
       </ListWrapper>
-    </div>
+    </List>
   );
 };
 

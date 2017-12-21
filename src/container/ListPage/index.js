@@ -13,7 +13,6 @@ export class ListPage extends Component {
   }
 
   updateSort = e => {
-    //console.log(e.target.value);
     this.props.updateSortList(e.target.value);
     this.props.getCoinList();
   };
