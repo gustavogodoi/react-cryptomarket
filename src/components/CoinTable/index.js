@@ -1,4 +1,5 @@
 import React from "react";
+import * as Formatted from "../DataFormatted";
 import * as st from "./style";
 
 const CoinTable = ({ list }) => {
@@ -20,12 +21,24 @@ const CoinTable = ({ list }) => {
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
           <st.ListItem type="symbol">{coin.symbol}</st.ListItem>
           <st.ListItem type="name">{coin.name}</st.ListItem>
-          <st.ListItem type="value">{coin.market_cap_eur}</st.ListItem>
-          <st.ListItem type="value">{coin.price_eur}</st.ListItem>
-          <st.ListItem type="value">{coin["24h_volume_eur"]}</st.ListItem>
-          <st.ListItem type="pct">{coin.percent_change_1h}</st.ListItem>
-          <st.ListItem type="pct">{coin.percent_change_1h}</st.ListItem>
-          <st.ListItem type="pct">{coin.percent_change_1h}</st.ListItem>
+          <st.ListItem type="value">
+            {Formatted.PriceEur(coin.market_cap_eur)}
+          </st.ListItem>
+          <st.ListItem type="value">
+            {Formatted.PriceEur(coin.price_eur)}
+          </st.ListItem>
+          <st.ListItem type="value">
+            {Formatted.PriceEur(coin["24h_volume_eur"])}
+          </st.ListItem>
+          <st.ListItem type="pct">
+            <Formatted.PctChange percentChange={coin.percent_change_1h} />
+          </st.ListItem>
+          <st.ListItem type="pct">
+            <Formatted.PctChange percentChange={coin.percent_change_24h} />
+          </st.ListItem>
+          <st.ListItem type="pct">
+            <Formatted.PctChange percentChange={coin.percent_change_7d} />
+          </st.ListItem>
         </st.ListRow>
       ))}
     </st.ListWrapper>
