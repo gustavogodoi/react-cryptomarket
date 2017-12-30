@@ -16,6 +16,9 @@ const widthHeader = {
 const hideMobile = ["mktCap", "volume24h", "pct1h", "value"];
 const hideTablet = ["mktCap", "volume24h"];
 
+const alignRight = ["mktCap", "volume24h", "value"];
+const alignCenter = ["pct1h", "pct24h", "pct7d"];
+
 export const ListWrapper = styled.div`
   margin-left: 15px;
   margin-right: 15px;
@@ -34,6 +37,11 @@ export const ListRow = styled.div`
 export const ListItem = styled.div`
   flex: 1 0 auto;
   vertical-align: top;
+  text-align: ${props =>
+    alignRight.includes(props.type)
+      ? "right"
+      : alignCenter.includes(props.type) ? "center" : "left"};
+  padding-right: 5px;
   width: ${props => widthHeader[props.type]};
   ${props => (hideMobile.includes(props.type) ? "display: none;" : "")};
 

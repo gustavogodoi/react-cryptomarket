@@ -27,7 +27,7 @@ const CoinTable = ({ list }) => {
             </st.ItemNameWrapper>
           </st.ListItem>
           <st.ListItem type="mktCap">
-            {Formatted.PriceEur(coin.market_cap_eur)}
+            {Formatted.PriceEur(coin.market_cap_eur, 0)}
           </st.ListItem>
           <st.ListItem type="value">
             {Formatted.PriceEur(coin.price_eur)}
