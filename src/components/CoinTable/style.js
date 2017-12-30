@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 // variables to responsive table
 const widthHeader = {
-  rank: "30px",
-  symbol: "20px",
-  name: "150px",
-  value: "100px",
-  pct1h: "75px",
-  pct24h: "75px",
-  pct7d: "75px",
-  mktCap: "150px;",
-  volume24h: "150px;"
+  rank: 30,
+  symbol: 20,
+  name: 150,
+  value: 100,
+  pct1h: 75,
+  pct24h: 75,
+  pct7d: 75,
+  mktCap: 150,
+  volume24h: 150
 };
 
 const hideMobile = ["mktCap", "volume24h", "pct1h", "value"];
@@ -42,11 +42,14 @@ export const ListItem = styled.div`
       ? "right"
       : alignCenter.includes(props.type) ? "center" : "left"};
   padding-right: 5px;
-  width: ${props => widthHeader[props.type]};
+  width: ${props =>
+    widthHeader[props.type] -
+    widthHeader[props.type] / 100 * 30}px; //30% smaller for mobile
   ${props => (hideMobile.includes(props.type) ? "display: none;" : "")};
 
   @media (min-width: 700px) {
     display: ${props => (hideTablet.includes(props.type) ? "none" : "inline")};
+    width: ${props => widthHeader[props.type]}px;
   }
 
   @media (min-width: 1000px) {
@@ -58,12 +61,14 @@ export const ItemNameWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  font-size: 13px;
   img {
     padding-right: 5px;
     width: 20px;
     height: auto;
   }
   @media (min-width: 700px) {
+    font-size: 15px;
     img {
       width: 30px;
     }
@@ -74,5 +79,23 @@ export const PctItem = styled.span`
   font-size: 13px;
   @media (min-width: 700px) {
     font-size: 15px;
+  }
+`;
+
+export const Favorite = styled.span`
+  cursor: pointer;
+`;
+
+export const NameSmall = styled.span`
+  display: inline;
+  @media (min-width: 700px) {
+    display: none;
+  }
+`;
+
+export const NameFull = styled.span`
+  display: none;
+  @media (min-width: 700px) {
+    display: inline;
   }
 `;

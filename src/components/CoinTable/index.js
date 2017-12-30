@@ -2,11 +2,16 @@ import React from "react";
 import * as Formatted from "../DataFormatted";
 import * as st from "./style";
 
-const CoinTable = ({ list }) => {
+const CoinTable = ({ list, favoriteCoin, favorites }) => {
   return (
     <st.ListWrapper>
       <st.ListRow header="true">
         <st.ListItem type="rank">#</st.ListItem>
+        <st.ListItem type="rank">
+          <span role="img" aria-label="Set Favorite">
+            ⭐️
+          </span>
+        </st.ListItem>
         <st.ListItem type="name">Name</st.ListItem>
         <st.ListItem type="mktCap">Market Cap</st.ListItem>
         <st.ListItem type="value">Price</st.ListItem>
@@ -18,12 +23,19 @@ const CoinTable = ({ list }) => {
       {list.map(coin => (
         <st.ListRow key={coin.rank}>
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
+          <st.ListItem type="rank" onClick={() => favoriteCoin(coin.symbol)}>
+            <st.Favorite role="img" aria-label="Set Favorite">
+              {favorites.includes(coin.symbol) ? `🌟` : `★`}
+            </st.Favorite>
+          </st.ListItem>
           <st.ListItem type="name">
             <st.ItemNameWrapper>
               <img
+                alt=""
                 src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${coin.symbol.toLowerCase()}.png`}
               />
-              {`${coin.name} (${coin.symbol})`}
+              <st.NameFull>{`${coin.name} (${coin.symbol})`}</st.NameFull>
+              <st.NameSmall>{`${coin.symbol}`}</st.NameSmall>
             </st.ItemNameWrapper>
           </st.ListItem>
           <st.ListItem type="mktCap">
