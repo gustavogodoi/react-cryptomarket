@@ -6,7 +6,7 @@ export const SortWrapper = styled.div`
 `;
 
 export const Label = styled.span`
-  padding-right: 5px;
+  padding-right: 10px;
 `;
 
 export const Select = styled.select`

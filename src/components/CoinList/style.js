@@ -35,3 +35,8 @@ export const LoadingWrapper = styled.div`
   text-align: center;
   font-size: 16px;
 `;
+
+export const Menu = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;

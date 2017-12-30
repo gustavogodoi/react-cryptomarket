@@ -16,7 +16,7 @@ const CoinTable = ({ list }) => {
         <st.ListItem type="pct7d">Change 7d</st.ListItem>
       </st.ListRow>
       {list.map(coin => (
-        <st.ListRow>
+        <st.ListRow key={coin.rank}>
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
           <st.ListItem type="name">
             <st.ItemNameWrapper>
