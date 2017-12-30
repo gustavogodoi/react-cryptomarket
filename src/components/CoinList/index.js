@@ -1,24 +1,35 @@
 import React from "react";
 import Sort from "../Sort";
 import CoinCard from "../CoinCard";
-import { List, ListWrapper, ListItem, LoadingWrapper } from "./style";
+import CoinTable from "../CoinTable";
+import * as st from "./style";
 
-const CoinList = ({ list, sort, updateSort }) => {
+const CoinList = ({ list, sort, updateSort, view }) => {
+  let displayList;
+
   if (!list || !list.length) {
-    return <LoadingWrapper>Loading...</LoadingWrapper>;
+    return <st.LoadingWrapper>Loading...</st.LoadingWrapper>;
+  }
+
+  if (view === "grid") {
+    displayList = (
+      <st.GridWrapper>
+        {list.map(coin => (
+          <st.GridItem key={coin.id}>
+            <CoinCard info={coin} />
+          </st.GridItem>
+        ))}
+      </st.GridWrapper>
+    );
+  } else {
+    displayList = <CoinTable list={list} />;
   }
 
   return (
-    <List>
+    <st.List>
       <Sort sort={sort} updateSort={updateSort} />
-      <ListWrapper>
-        {list.map(coin => (
-          <ListItem key={coin.id}>
-            <CoinCard info={coin} />
-          </ListItem>
-        ))}
-      </ListWrapper>
-    </List>
+      {displayList}
+    </st.List>
   );
 };
 

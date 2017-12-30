@@ -12,7 +12,7 @@ class App extends Component {
         <Header />
         <BodyWrapper>
           <Switch>
-            <Route exact path="/" component={ListPage} />
+            <Route exact path="/:view?" component={ListPage} />
           </Switch>
         </BodyWrapper>
         <Footer />

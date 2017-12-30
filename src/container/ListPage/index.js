@@ -8,8 +8,11 @@ import {
 import CoinList from "../../components/CoinList";
 
 export class ListPage extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.loadCoinListRequest();
+    this.setState({
+      view: this.props.match.params.view || "grid"
+    });
   }
 
   updateSort = e => {
@@ -24,6 +27,7 @@ export class ListPage extends Component {
           list={this.props.list}
           sort={this.props.sort}
           updateSort={this.updateSort}
+          view={this.state.view}
         />
       </div>
     );

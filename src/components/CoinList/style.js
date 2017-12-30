@@ -4,7 +4,7 @@ export const List = styled.div`
   padding-top: 10px;
 `;
 
-export const ListWrapper = styled.div`
+export const GridWrapper = styled.div`
   min-height: 300px;
   padding: 0 15px 30px 15px;
   display: grid;
@@ -19,7 +19,7 @@ export const ListWrapper = styled.div`
   }
 `;
 
-export const ListItem = styled.div`
+export const GridItem = styled.div`
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 1px 1px darkgrey;
