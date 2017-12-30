@@ -2,12 +2,19 @@ import styled from "styled-components";
 
 // variables to responsive table
 const widthHeader = {
-  rank: "20px",
+  rank: "30px",
   symbol: "20px",
-  name: "120px",
+  name: "150px",
   value: "100px",
-  pct: "50px"
+  pct1h: "75px",
+  pct24h: "75px",
+  pct7d: "75px",
+  mktCap: "150px;",
+  volume24h: "150px;"
 };
+
+const hideMobile = ["mktCap", "volume24h", "pct1h", "value"];
+const hideTablet = ["mktCap", "volume24h"];
 
 export const ListWrapper = styled.div`
   margin-left: 15px;
@@ -28,4 +35,36 @@ export const ListItem = styled.div`
   flex: 1 0 auto;
   vertical-align: top;
   width: ${props => widthHeader[props.type]};
+  ${props => (hideMobile.includes(props.type) ? "display: none;" : "")};
+
+  @media (min-width: 700px) {
+    display: ${props => (hideTablet.includes(props.type) ? "none" : "inline")};
+  }
+
+  @media (min-width: 1000px) {
+    display: inline;
+  }
+`;
+
+export const ItemNameWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  img {
+    padding-right: 5px;
+    width: 20px;
+    height: auto;
+  }
+  @media (min-width: 700px) {
+    img {
+      width: 30px;
+    }
+  }
+`;
+
+export const PctItem = styled.span`
+  font-size: 13px;
+  @media (min-width: 700px) {
+    font-size: 15px;
+  }
 `;
