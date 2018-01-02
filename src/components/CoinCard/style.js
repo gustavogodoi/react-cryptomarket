@@ -56,3 +56,7 @@ export const CoinCap = styled.span`
     text-align: right;
   }
 `;
+
+export const FavoriteWrapper = styled.span`
+  padding-right: 5px;
+`;
