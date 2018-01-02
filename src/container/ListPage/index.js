@@ -10,30 +10,11 @@ import CoinList from "../../components/CoinList";
 export class ListPage extends Component {
   componentWillMount() {
     this.props.loadCoinListRequest();
-    this.setState({
-      favorites: JSON.parse(localStorage.getItem("favorites")) || []
-    });
   }
 
   updateSort = e => {
     this.props.updateSortList(e.target.value);
     this.props.getCoinList();
-  };
-
-  favoriteCoin = coin => {
-    const index = this.state.favorites.indexOf(coin);
-    const newFavorites = Object.assign([], this.state.favorites);
-
-    if (index === -1) {
-      newFavorites.push(coin);
-    } else {
-      newFavorites.splice(index, 1);
-    }
-
-    this.setState({
-      favorites: newFavorites
-    });
-    localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   render() {
@@ -45,8 +26,6 @@ export class ListPage extends Component {
           sort={this.props.sort}
           updateSort={this.updateSort}
           view={view}
-          favoriteCoin={this.favoriteCoin}
-          favorites={this.state.favorites}
         />
       </div>
     );

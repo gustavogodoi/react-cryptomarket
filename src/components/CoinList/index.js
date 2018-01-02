@@ -5,14 +5,7 @@ import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
 import * as st from "./style";
 
-const CoinList = ({
-  list,
-  sort,
-  updateSort,
-  view,
-  favoriteCoin,
-  favorites
-}) => {
+const CoinList = ({ list, sort, updateSort, view }) => {
   let displayList;
 
   if (!list || !list.length) {
@@ -30,13 +23,7 @@ const CoinList = ({
       </st.GridWrapper>
     );
   } else {
-    displayList = (
-      <CoinTable
-        list={list}
-        favoriteCoin={favoriteCoin}
-        favorites={favorites}
-      />
-    );
+    displayList = <CoinTable list={list} />;
   }
 
   return (
@@ -44,11 +31,11 @@ const CoinList = ({
       <st.Menu>
         <Sort sort={sort} updateSort={updateSort} />
         <div>
-          View:{" "}
+          {`View: `}
           <span>
             <Link to="table">Table</Link>
-          </span>{" "}
-          |{" "}
+          </span>
+          {"  | "}
           <span>
             <Link to="grid">Grid</Link>
           </span>

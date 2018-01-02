@@ -1,8 +1,9 @@
 import React from "react";
+import Favorite from "../Favorite";
 import * as Formatted from "../DataFormatted";
 import * as st from "./style";
 
-const CoinTable = ({ list, favoriteCoin, favorites }) => {
+const CoinTable = ({ list }) => {
   return (
     <st.ListWrapper>
       <st.ListRow header="true">
@@ -23,10 +24,8 @@ const CoinTable = ({ list, favoriteCoin, favorites }) => {
       {list.map(coin => (
         <st.ListRow key={coin.rank}>
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
-          <st.ListItem type="rank" onClick={() => favoriteCoin(coin.symbol)}>
-            <st.Favorite role="img" aria-label="Set Favorite">
-              {favorites.includes(coin.symbol) ? `🌟` : `★`}
-            </st.Favorite>
+          <st.ListItem type="rank">
+            <Favorite item={coin.symbol} />
           </st.ListItem>
           <st.ListItem type="name">
             <st.ItemNameWrapper>

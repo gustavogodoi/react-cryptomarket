@@ -82,10 +82,6 @@ export const PctItem = styled.span`
   }
 `;
 
-export const Favorite = styled.span`
-  cursor: pointer;
-`;
-
 export const NameSmall = styled.span`
   display: inline;
   @media (min-width: 700px) {
