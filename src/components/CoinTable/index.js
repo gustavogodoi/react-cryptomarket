@@ -25,7 +25,9 @@ const CoinTable = ({ list }) => {
         <st.ListRow key={coin.rank}>
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
           <st.ListItem type="rank">
-            <Favorite item={coin.symbol} />
+            <st.FavoriteWrapper>
+              <Favorite item={coin.symbol} />
+            </st.FavoriteWrapper>
           </st.ListItem>
           <st.ListItem type="name">
             <st.ItemNameWrapper>

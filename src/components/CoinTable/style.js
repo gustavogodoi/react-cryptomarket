@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Favorite } from "../Favorite/index";
 
 // variables to responsive table
 const widthHeader = {
@@ -94,4 +95,10 @@ export const NameFull = styled.span`
   @media (min-width: 700px) {
     display: inline;
   }
+`;
+
+export const FavoriteWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
 `;
