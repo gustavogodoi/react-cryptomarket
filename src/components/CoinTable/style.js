@@ -29,6 +29,10 @@ export const ListRow = styled.div`
   border-bottom: 1px solid #e0e0e0;
   border-collapse: collapse;
   ${props => (props.header ? "font-weight: bold" : "")};
+  font-size: 13px;
+  @media (min-width: 700px) {
+    font-size: 15px;
+  }
 `;
 export const ListItem = styled.div`
   flex: 1 0 auto;
@@ -57,28 +61,23 @@ export const ItemNameWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  font-size: 13px;
   img {
     padding-right: 5px;
     width: 20px;
     height: auto;
   }
   @media (min-width: 700px) {
-    font-size: 15px;
     img {
       width: 30px;
     }
   }
 `;
 
-export const PctItem = styled.span`
-  font-size: 13px;
-  @media (min-width: 700px) {
-    font-size: 15px;
-  }
-`;
+export const PctItem = styled.span``;
 
 export const NameSmall = styled.span`
+  cursor: pointer;
+  text-decoration: solid;
   display: inline;
   @media (min-width: 700px) {
     display: none;
@@ -86,6 +85,8 @@ export const NameSmall = styled.span`
 `;
 
 export const NameFull = styled.span`
+  cursor: pointer;
+  text-decoration: underline;
   display: none;
   @media (min-width: 700px) {
     display: inline;

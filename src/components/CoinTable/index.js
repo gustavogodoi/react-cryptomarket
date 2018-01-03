@@ -35,8 +35,13 @@ const CoinTable = ({ list }) => {
                 alt=""
                 src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${coin.symbol.toLowerCase()}.png`}
               />
-              <st.NameFull>{`${coin.name} (${coin.symbol})`}</st.NameFull>
-              <st.NameSmall>{`${coin.symbol}`}</st.NameSmall>
+              <a
+                href={`https://coinmarketcap.com/currencies/${coin.id}`}
+                target="_blank"
+              >
+                <st.NameFull>{`${coin.name} (${coin.symbol})`}</st.NameFull>
+                <st.NameSmall>{`${coin.symbol}`}</st.NameSmall>
+              </a>
             </st.ItemNameWrapper>
           </st.ListItem>
           <st.ListItem type="mktCap">
