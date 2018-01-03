@@ -3,7 +3,7 @@ import styled, { injectGlobal } from "styled-components";
 injectGlobal`
   body {
     font-family: 'Roboto';
-    margin: 0;
+    margin: 0 15px;
     padding: 0;
   }
 

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SortWrapper = styled.div`
-  padding: 0 0 30px 30px;
   font-size: 13px;
 `;
 

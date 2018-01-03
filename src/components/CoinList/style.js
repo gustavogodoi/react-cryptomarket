@@ -38,5 +38,9 @@ export const LoadingWrapper = styled.div`
 
 export const Menu = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 20px;
+  div {
+    padding-right: 15px;
+  }
 `;
