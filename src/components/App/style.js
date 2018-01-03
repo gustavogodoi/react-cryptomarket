@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { injectGlobal } from "styled-components";
+
+injectGlobal`
+  body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;

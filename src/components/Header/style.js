@@ -6,11 +6,6 @@ export const HeaderWapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
 `;
 
 export const HeaderText = styled.div`

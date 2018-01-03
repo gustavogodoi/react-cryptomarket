@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Favorite } from "../Favorite/index";
 
 // variables to responsive table
 const widthHeader = {
@@ -23,7 +22,7 @@ const alignCenter = ["pct1h", "pct24h", "pct7d"];
 export const ListWrapper = styled.div`
   margin-left: 15px;
   margin-right: 15px;
-  padding: 10px 15px;
+  padding: 10px 0px;
 `;
 
 export const ListRow = styled.div`

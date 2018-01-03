@@ -7,10 +7,6 @@ export const FooterWapper = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  a {
-    text-decoration: none;
-    color: black;
-  }
 `;
 
 export const Author = styled.div`
