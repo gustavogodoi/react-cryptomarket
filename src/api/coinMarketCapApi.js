@@ -1,5 +1,5 @@
 const getCoinListApi = () => {
-  const urlApi = `https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=18`;
+  const urlApi = `https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=30`;
   return fetch(urlApi, {
     mode: "cors"
   })
