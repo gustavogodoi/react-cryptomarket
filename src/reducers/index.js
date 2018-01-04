@@ -9,6 +9,9 @@ const initialState = {
 const sortAsc = ["rank"];
 
 const sortFunction = (sortParam, list) => {
+  if (!list || !list.length) {
+    return list;
+  }
   const listSorted = list.sort((a, b) => {
     if (sortAsc.includes(sortParam)) {
       return a[sortParam] - b[sortParam];

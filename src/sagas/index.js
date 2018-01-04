@@ -4,12 +4,14 @@ import { getCoinListApi } from "../api/coinMarketCapApi";
 import * as actions from "../actions";
 
 export function* fetchCoinList() {
-  while (true) {
-    try {
+  try {
+    while (true) {
       const result = yield call(getCoinListApi);
       yield put(actions.loadCoinListSuccess(result));
       yield delay(60000);
-    } catch (error) {}
+    }
+  } catch (error) {
+    console.error(`!!! ERROR !!!: ${error}`);
   }
 }
 
