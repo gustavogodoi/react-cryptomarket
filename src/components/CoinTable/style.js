@@ -4,17 +4,17 @@ import styled from "styled-components";
 const widthHeader = {
   rank: 30,
   symbol: 20,
-  name: 150,
-  value: 100,
+  name: 120,
+  value: 90,
   pct1h: 75,
   pct24h: 75,
   pct7d: 75,
-  mktCap: 150,
-  volume24h: 150
+  mktCap: 120,
+  volume24h: 120
 };
 
-const hideMobile = ["mktCap", "volume24h", "pct1h", "value"];
-const hideTablet = ["mktCap", "volume24h"];
+const hideMobile = ["mktCap", "volume24h", "pct1h"];
+const hideTablet = ["volume24h"];
 
 const alignRight = ["mktCap", "volume24h", "value"];
 const alignCenter = ["pct1h", "pct24h", "pct7d"];
