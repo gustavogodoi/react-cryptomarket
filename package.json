@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "material-ui": "^v1.0.0-beta.26",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
@@ -20,6 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && mv build/index.html build/200.html && surge build bitcoin-react.surge.sh"
+    "deploy":
+      "npm run build && mv build/index.html build/200.html && surge build bitcoin-react.surge.sh"
   }
 }

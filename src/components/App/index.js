@@ -4,6 +4,7 @@ import { Wrapper, BodyWrapper } from "./style";
 import Header from "../Header";
 import Footer from "../Footer";
 import ListPage from "../../container/ListPage";
+import MyWalletPage from "../../container/MyWalletPage";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Header />
         <BodyWrapper>
           <Switch>
+            <Route exact path="/wallet" component={MyWalletPage} />
             <Route exact path="/:view?" component={ListPage} />
           </Switch>
         </BodyWrapper>
