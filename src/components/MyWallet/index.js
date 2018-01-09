@@ -1,72 +1,106 @@
-import React from "react";
+import React, { Component } from "react";
 import Input, { InputLabel } from "material-ui/Input";
 import { FormControl } from "material-ui/Form";
+import * as DateFormat from "../DataFormatted";
 import * as st from "./style";
 
-const MyWallet = ({ list }) => {
-  if (!list || !list.length) {
-    return <div>Loading...</div>;
+class MyWallet extends Component {
+  constructor() {
+    super();
+    this.state = {
+      wallet: {}
+    };
   }
 
-  const bitcoin = list[0];
-  console.log(bitcoin);
+  handlerChange = (event, coin, type) => {
+    const value = event.target.value;
+    const wallet = { ...this.state.wallet };
+    const coinChanged = {
+      ...wallet[coin],
+      [type]: value
+    };
+    wallet[coin] = coinChanged;
+    this.setState({ wallet });
+  };
 
-  const currentValue = null;
-  // this.state.quantity && Number(this.state.quantity)
-  //   ? Number(bitcoin.price_eur) * Number(this.state.quantity)
-  //   : null;
+  render() {
+    const { list } = this.props;
+    if (!list || !list.length) {
+      return <div>Loading...</div>;
+    }
 
-  const percentage = null;
-  // this.state.pricePaid && Number(this.state.pricePaid)
-  //   ? (Number(bitcoin.price_eur) / Number(this.state.pricePaid) - 1) * 100
-  //   : null;
+    const coinsWallet = list.map(coin => {
+      const myWalletCoins = this.state.wallet[coin.symbol] || {};
+      const currentValue =
+        myWalletCoins.quantity && Number(myWalletCoins.quantity)
+          ? Number(coin.price_eur) * Number(myWalletCoins.quantity)
+          : null;
 
-  return (
-    <div>
-      <div style={{ display: "flex" }}>
-        <div>
-          <div>
-            <span>Bitcoin</span>
-          </div>
-          <div>
-            <FormControl>
-              <InputLabel htmlFor="quantity">Quantity</InputLabel>
-              <Input
-                id="quantity"
-                //value={this.state.quantity}
-                //onChange={this.handleChangeQtd}
-              />
-            </FormControl>
-          </div>
-          <div>
-            <FormControl>
-              <InputLabel htmlFor="price-paid">Price Paid</InputLabel>
-              <Input
-                id="price-paid"
-                //value={this.state.pricePaid}
-                //onChange={this.handleChangePricePaid}
-              />
-            </FormControl>
-          </div>
-        </div>
+      const percentage =
+        myWalletCoins.pricePaid && Number(myWalletCoins.pricePaid)
+          ? (Number(coin.price_eur) / Number(myWalletCoins.pricePaid) - 1) * 100
+          : null;
 
-        <div>
-          <div>Current Price:</div>
-          <div>{bitcoin.price_eur}</div>
-        </div>
+      return (
+        <st.CoinDiv key={coin.id}>
+          <st.CoinName>{`${coin.name} (${coin.symbol})`} </st.CoinName>
+          <st.CoinWrapper>
+            <div>
+              <div>
+                <FormControl>
+                  <InputLabel htmlFor="quantity">Quantity</InputLabel>
+                  <Input
+                    id="quantity"
+                    onChange={e =>
+                      this.handlerChange(e, coin.symbol, "quantity")
+                    }
+                  />
+                </FormControl>
+              </div>
+              <div>
+                <FormControl>
+                  <InputLabel htmlFor="price-paid">Price Paid</InputLabel>
+                  <Input
+                    id="price-paid"
+                    onChange={e =>
+                      this.handlerChange(e, coin.symbol, "pricePaid")
+                    }
+                  />
+                </FormControl>
+              </div>
+            </div>
 
-        <div>
-          <div>Current Value:</div>
-          <div>{currentValue}</div>
-        </div>
+            <div>
+              <div>
+                <st.Title>Current Price:</st.Title>
+              </div>
+              <div>{DateFormat.PriceEur(coin.price_eur)}</div>
+            </div>
 
-        <div>
-          <div>Percentage:</div>
-          <div>{percentage}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
+            <div>
+              <div>
+                <st.Title>My Balance:</st.Title>
+              </div>
+              <div>{DateFormat.PriceEur(currentValue)}</div>
+            </div>
+
+            <div>
+              <div>
+                <st.Title>Variation:</st.Title>
+              </div>
+              <div>
+                {percentage && (
+                  <DateFormat.PctChange percentChange={percentage} />
+                )}
+              </div>
+            </div>
+          </st.CoinWrapper>
+        </st.CoinDiv>
+      );
+    });
+
+    return <st.WalletWrapper>{coinsWallet}</st.WalletWrapper>;
+  }
+}
 
 export default MyWallet;
