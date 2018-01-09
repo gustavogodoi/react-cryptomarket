@@ -2,12 +2,9 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const MenuWrapper = styled.div`
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
-  -moz-transition-property: all;
-  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
-
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(100, 50, 21, 6);
   padding: 30px;
   text-align: center;
 `;
@@ -25,8 +22,7 @@ export const NavItem = styled(NavLink)`
     font-weight: bold;
   }
 
-  :hover,
-  :focus {
+  :hover{
     color: palevioletred;
     border:none;
     background:rgba(0, 0, 0, 0.4);

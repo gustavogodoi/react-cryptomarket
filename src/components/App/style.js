@@ -2,13 +2,11 @@ import styled, { injectGlobal } from "styled-components";
 
 injectGlobal`
   html *, html ::after, html ::before {
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-transition: inherit;
-      transition: inherit;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    transition: inherit;
   }
+
   body {
     font-family: "Montserrat";
     margin: 0 15px;
