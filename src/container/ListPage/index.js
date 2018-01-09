@@ -9,7 +9,9 @@ import CoinList from "../../components/CoinList";
 
 export class ListPage extends Component {
   componentWillMount() {
-    this.props.loadCoinListRequest();
+    if (!this.props.list || !this.props.list.length) {
+      this.props.loadCoinListRequest();
+    }
   }
 
   updateSort = e => {

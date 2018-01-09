@@ -5,7 +5,9 @@ import MyWallet from "../../components/MyWallet";
 
 class MyWalletPage extends Component {
   componentWillMount() {
-    this.props.loadCoinListRequest();
+    if (!this.props.list || !this.props.list.length) {
+      this.props.loadCoinListRequest();
+    }
   }
 
   state = {
