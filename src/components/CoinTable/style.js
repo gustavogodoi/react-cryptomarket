@@ -24,16 +24,36 @@ export const ListWrapper = styled.div``;
 export const ListRow = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 15px;
   border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #dee0e0;
+  border-left: 1px solid #dee0e0;
+  background-color: #f2f2f2;
   border-collapse: collapse;
   ${props => (props.header ? "font-weight: bold" : "")};
   font-size: 13px;
   @media (min-width: 700px) {
     font-size: 15px;
   }
+  :hover,
+  :focus {
+    background-color: #f9f9f9;
+  }
 `;
+
+export const ListHeader = ListRow.extend`
+  background-color: white;
+  border: 1px solid #dee0e0;
+  border-radius: 5px;
+
+  :hover,
+  :focus {
+    background-color: white;
+  }
+`;
+
 export const ListItem = styled.div`
   flex: 1 0 auto;
   vertical-align: top;

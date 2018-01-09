@@ -6,11 +6,14 @@ injectGlobal`
       backface-visibility: hidden;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
+      -webkit-transition: inherit;
+      transition: inherit;
   }
   body {
     font-family: 'Roboto';
     margin: 0 15px;
     padding: 0;
+    background-color: #F9F9F9
   }
 
   a {

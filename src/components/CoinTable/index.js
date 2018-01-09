@@ -6,7 +6,7 @@ import * as st from "./style";
 const CoinTable = ({ list }) => {
   return (
     <st.ListWrapper>
-      <st.ListRow header="true">
+      <st.ListHeader header="true">
         <st.ListItem type="rank">#</st.ListItem>
         <st.ListItem type="rank">
           <span role="img" aria-label="Set Favorite">
@@ -20,7 +20,7 @@ const CoinTable = ({ list }) => {
         <st.ListItem type="pct1h">Change 1h</st.ListItem>
         <st.ListItem type="pct24h">Change 24h</st.ListItem>
         <st.ListItem type="pct7d">Change 7d</st.ListItem>
-      </st.ListRow>
+      </st.ListHeader>
       {list.map(coin => (
         <st.ListRow key={coin.rank}>
           <st.ListItem type="rank">{coin.rank}</st.ListItem>
