@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const PctWrapper = styled.div`
+  white-space: nowrap;
+`;
+
 export const PctChange = styled.span`
   font-weight: ${props => (props.danger ? "bold" : "normal")};
   color: ${props => (props.danger ? "red" : "green")};

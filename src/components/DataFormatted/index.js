@@ -14,20 +14,15 @@ function MoneyFormat(labelValue, decimals) {
 }
 
 export const PriceEur = (value, decimals = 2) => {
-  return value
-    ? `€${MoneyFormat(value, decimals)}`
-    : // `€${Number(Number(value).toFixed(2)).toLocaleString(undefined, {
-      //     minimumFractionDigits: decimals
-      //   })}`
-      "-";
+  return value ? `€${MoneyFormat(value, decimals)}` : "-";
 };
 
 export const PctChange = ({ percentChange }) => {
   percentChange = Number(percentChange).toFixed(1);
   return (
-    <React.Fragment>
+    <st.PctWrapper>
       <st.PctChange danger={percentChange < 0}>{percentChange}%</st.PctChange>
       <st.Arrow danger={percentChange < 0} />
-    </React.Fragment>
+    </st.PctWrapper>
   );
 };

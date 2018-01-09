@@ -5,7 +5,7 @@ const widthHeader = {
   rank: 30,
   symbol: 20,
   name: 120,
-  value: 90,
+  value: 100,
   pct1h: 75,
   pct24h: 75,
   pct7d: 75,
@@ -26,6 +26,7 @@ export const ListRow = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
+  min-width: 345px;
   padding: 8px 15px;
   border-bottom: 1px solid #e0e0e0;
   border-right: 1px solid #dee0e0;

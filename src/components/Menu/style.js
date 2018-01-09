@@ -7,15 +7,21 @@ export const MenuWrapper = styled.div`
   transition-timing-function: cubic-bezier(100, 50, 21, 6);
   padding: 30px;
   text-align: center;
+  white-space: nowrap;
 `;
 
 export const NavItem = styled(NavLink)`
   color: #999;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 13px;
   text-decoration: none;
-  letter-spacing:2px;
+  letter-spacing: 1px;
   text-transform:uppercase;
+
+  @media (min-width: 700px) {
+    padding: 10px 20px;
+    letter-spacing: 2px;
+  }
 
   &.${props => props.activeClassName} {
     color: palevioletred;

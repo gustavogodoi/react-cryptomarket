@@ -12,6 +12,11 @@ export const CoinWrapper = styled.div`
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid lightgray;
+  flex-flow: column;
+
+  @media (min-width: 700px) {
+    flex-flow: row;
+  }
 `;
 
 export const CoinName = styled.div`
