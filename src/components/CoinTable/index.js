@@ -17,9 +17,15 @@ const CoinTable = ({ list }) => {
         <st.ListItem type="mktCap">Market Cap</st.ListItem>
         <st.ListItem type="value">Price</st.ListItem>
         <st.ListItem type="volume24h">Volume (24h)</st.ListItem>
-        <st.ListItem type="pct1h">Change 1h</st.ListItem>
-        <st.ListItem type="pct24h">Change 24h</st.ListItem>
-        <st.ListItem type="pct7d">Change 7d</st.ListItem>
+        <st.ListItem type="pct1h">
+          <st.HideMobile>Change</st.HideMobile> 1h
+        </st.ListItem>
+        <st.ListItem type="pct24h">
+          <st.HideMobile>Change</st.HideMobile> 24h
+        </st.ListItem>
+        <st.ListItem type="pct7d">
+          <st.HideMobile>Change</st.HideMobile> 7d
+        </st.ListItem>
       </st.ListHeader>
       {list.map(coin => (
         <st.ListRow key={coin.rank}>

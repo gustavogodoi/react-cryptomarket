@@ -26,7 +26,7 @@ export const ListRow = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
-  padding: 10px 15px;
+  padding: 8px 15px;
   border-bottom: 1px solid #e0e0e0;
   border-right: 1px solid #dee0e0;
   border-left: 1px solid #dee0e0;
@@ -39,7 +39,7 @@ export const ListRow = styled.div`
   }
   :hover,
   :focus {
-    background-color: #f9f9f9;
+    background-color: white;
   }
 `;
 
@@ -117,4 +117,11 @@ export const FavoriteWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+`;
+
+export const HideMobile = styled.span`
+  display: none;
+  @media (min-width: 1000px) {
+    display: inline;
+  }
 `;
