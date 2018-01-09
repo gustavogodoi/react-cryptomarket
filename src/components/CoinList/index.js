@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Sort from "../Sort";
 import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
@@ -30,16 +29,6 @@ const CoinList = ({ list, sort, updateSort, view }) => {
     <st.List>
       <st.Menu>
         <Sort sort={sort} updateSort={updateSort} />
-        <div>
-          {`View: `}
-          <span>
-            <Link to="table">Table</Link>
-          </span>
-          {"  | "}
-          <span>
-            <Link to="grid">Grid</Link>
-          </span>
-        </div>
       </st.Menu>
       {displayList}
     </st.List>

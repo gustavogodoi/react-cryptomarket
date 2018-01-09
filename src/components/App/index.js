@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router";
 import { Wrapper, BodyWrapper } from "./style";
 import Header from "../Header";
+import Menu from "../Menu";
 import Footer from "../Footer";
 import ListPage from "../../container/ListPage";
 import MyWalletPage from "../../container/MyWalletPage";
@@ -10,7 +11,10 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header />
+        <div>
+          <Header />
+          <Menu />
+        </div>
         <BodyWrapper>
           <Switch>
             <Route exact path="/wallet" component={MyWalletPage} />
