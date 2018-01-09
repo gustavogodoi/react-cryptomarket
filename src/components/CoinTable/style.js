@@ -32,7 +32,6 @@ export const ListRow = styled.div`
   border-left: 1px solid #dee0e0;
   background-color: #f2f2f2;
   border-collapse: collapse;
-  ${props => (props.header ? "font-weight: bold" : "")};
   font-size: 13px;
   @media (min-width: 700px) {
     font-size: 15px;
@@ -44,9 +43,14 @@ export const ListRow = styled.div`
 `;
 
 export const ListHeader = ListRow.extend`
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
   background-color: white;
-  border: 1px solid #dee0e0;
-  border-radius: 5px;
+
+  @media (min-width: 700px) {
+    font-size: 13px;
+  }
 
   :hover,
   :focus {
@@ -78,6 +82,7 @@ export const ListItem = styled.div`
 `;
 
 export const ItemNameWrapper = styled.div`
+  font-size: 15px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -117,11 +122,4 @@ export const FavoriteWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-`;
-
-export const HideMobile = styled.span`
-  display: none;
-  @media (min-width: 1000px) {
-    display: inline;
-  }
 `;

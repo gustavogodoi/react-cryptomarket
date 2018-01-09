@@ -10,7 +10,7 @@ injectGlobal`
       transition: inherit;
   }
   body {
-    font-family: 'Roboto';
+    font-family: "Montserrat";
     margin: 0 15px;
     padding: 0;
     background-color: #F9F9F9
