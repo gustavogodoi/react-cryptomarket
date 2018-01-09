@@ -13,8 +13,8 @@ export const PctChange = ({ percentChange }) => {
   percentChange = Number(percentChange).toFixed(1);
   return (
     <React.Fragment>
-      <st.Arrow danger={percentChange < 0} />
       <st.PctChange danger={percentChange < 0}>{percentChange}%</st.PctChange>
+      <st.Arrow danger={percentChange < 0} />
     </React.Fragment>
   );
 };

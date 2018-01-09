@@ -1,6 +1,12 @@
 import styled, { injectGlobal } from "styled-components";
 
 injectGlobal`
+  html *, html ::after, html ::before {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+  }
   body {
     font-family: 'Roboto';
     margin: 0 15px;

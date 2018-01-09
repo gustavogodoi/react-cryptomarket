@@ -8,11 +8,11 @@ export const PctChange = styled.span`
 
 export const Arrow = styled.div`
   display: inline-block;
-  margin: ${props => (props.danger ? "1" : "3")}px 1px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  margin: ${props => (props.danger ? "2" : "3")}px 2px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
   ${props =>
     props.danger
-      ? "border-top: 5px solid red;"
-      : "border-bottom: 5px solid green;"};
+      ? "border-top: 4px solid red;"
+      : "border-bottom: 4px solid green;"};
 `;
