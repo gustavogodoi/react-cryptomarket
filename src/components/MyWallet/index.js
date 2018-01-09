@@ -12,6 +12,12 @@ class MyWallet extends Component {
     };
   }
 
+  componentWillMount() {
+    this.setState({
+      wallet: JSON.parse(localStorage.getItem("myWallet")) || {}
+    });
+  }
+
   handlerChange = (event, coin, type) => {
     const value = event.target.value;
     const wallet = { ...this.state.wallet };
@@ -21,6 +27,7 @@ class MyWallet extends Component {
     };
     wallet[coin] = coinChanged;
     this.setState({ wallet });
+    localStorage.setItem("myWallet", JSON.stringify(wallet));
   };
 
   render() {
@@ -51,6 +58,7 @@ class MyWallet extends Component {
                   <InputLabel htmlFor="quantity">Quantity</InputLabel>
                   <Input
                     id="quantity"
+                    value={myWalletCoins.quantity}
                     onChange={e =>
                       this.handlerChange(e, coin.symbol, "quantity")
                     }
@@ -62,6 +70,7 @@ class MyWallet extends Component {
                   <InputLabel htmlFor="price-paid">Price Paid</InputLabel>
                   <Input
                     id="price-paid"
+                    value={myWalletCoins.pricePaid}
                     onChange={e =>
                       this.handlerChange(e, coin.symbol, "pricePaid")
                     }
