@@ -88,13 +88,13 @@ export const ItemNameWrapper = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   img {
-    padding-right: 5px;
+    margin-right: 5px;
     width: 20px;
     height: auto;
   }
   @media (min-width: 700px) {
     img {
-      width: 30px;
+      width: 25px;
     }
   }
 `;

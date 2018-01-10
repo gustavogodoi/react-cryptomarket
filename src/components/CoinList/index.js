@@ -1,4 +1,5 @@
 import React from "react";
+import FlipMove from "react-flip-move";
 import Sort from "../Sort";
 import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
@@ -14,11 +15,13 @@ const CoinList = ({ list, sort, updateSort, view }) => {
   if (view === "grid") {
     displayList = (
       <st.GridWrapper>
+        {/* <FlipMove staggerDurationBy="30" duration={500} typeName="div"> */}
         {list.map(coin => (
           <st.GridItem key={coin.id}>
             <CoinCard info={coin} />
           </st.GridItem>
         ))}
+        {/* </FlipMove> */}
       </st.GridWrapper>
     );
   } else {
