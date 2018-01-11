@@ -1,27 +1,31 @@
 import React from "react";
-import FlipMove from "react-flip-move";
 import Sort from "../Sort";
 import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
 import * as st from "./style";
 
-const CoinList = ({ list, sort, view }) => {
+const CoinList = ({ list, view }) => {
   let displayList;
+  let displaySort;
 
   if (!list || !list.length) {
     return <st.LoadingWrapper>Loading...</st.LoadingWrapper>;
   }
 
   if (view === "grid") {
+    displaySort = (
+      <st.Menu>
+        <Sort />
+      </st.Menu>
+    );
+
     displayList = (
       <st.GridWrapper>
-        {/* <FlipMove staggerDurationBy="30" duration={500} typeName="div"> */}
         {list.map(coin => (
           <st.GridItem key={coin.id}>
             <CoinCard info={coin} />
           </st.GridItem>
         ))}
-        {/* </FlipMove> */}
       </st.GridWrapper>
     );
   } else {
@@ -30,9 +34,7 @@ const CoinList = ({ list, sort, view }) => {
 
   return (
     <st.List>
-      <st.Menu>
-        <Sort sort={sort} />
-      </st.Menu>
+      {displaySort}
       {displayList}
     </st.List>
   );

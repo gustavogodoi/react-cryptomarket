@@ -14,7 +14,7 @@ export class ListPage extends Component {
     const view = this.props.match.params.view || "table";
     return (
       <div>
-        <CoinList list={this.props.list} sort={this.props.sort} view={view} />
+        <CoinList list={this.props.list} view={view} />
       </div>
     );
   }
