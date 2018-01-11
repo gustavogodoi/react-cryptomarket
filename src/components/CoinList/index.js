@@ -1,5 +1,5 @@
 import React from "react";
-import Sort from "../Sort";
+import Sort from "../SortDropdown";
 import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
 import * as st from "./style";

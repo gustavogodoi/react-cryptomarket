@@ -72,6 +72,8 @@ export const ListItem = styled.div`
     widthHeader[props.type] / 100 * 30}px; //30% smaller for mobile
   ${props => (hideMobile.includes(props.type) ? "display: none;" : "")};
 
+  ${props => (props.selected ? "color: palevioletred" : "")};
+
   @media (min-width: 700px) {
     display: ${props => (hideTablet.includes(props.type) ? "none" : "inline")};
     width: ${props => widthHeader[props.type]}px;

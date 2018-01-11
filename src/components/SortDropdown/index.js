@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { updateSortList } from "../../actions/";
 import { SortWrapper, Label, Select } from "./style";
 
-export class Sort extends Component {
+export class SortDropdown extends Component {
   updateSort = e => {
     this.props.updateSortList(e.target.value);
   };
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
   updateSortList: param => dispatch(updateSortList(param))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sort);
+export default connect(mapStateToProps, mapDispatchToProps)(SortDropdown);

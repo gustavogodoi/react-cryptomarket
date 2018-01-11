@@ -3,10 +3,10 @@ import * as actions from "../actions";
 const initialState = {
   coinList: {},
   loading: false,
-  sort: "rank"
+  sort: "market_cap_eur"
 };
 
-const sortAsc = ["rank"];
+const sortAsc = ["rank", "id", "name"];
 
 const sortFunction = (sortParam, list) => {
   if (!list || !list.length) {
@@ -14,7 +14,8 @@ const sortFunction = (sortParam, list) => {
   }
   const listSorted = list.sort((a, b) => {
     if (sortAsc.includes(sortParam)) {
-      return a[sortParam] - b[sortParam];
+      if (a[sortParam] < b[sortParam]) return -1;
+      if (a[sortParam] > b[sortParam]) return 1;
     }
     return b[sortParam] - a[sortParam];
   });
