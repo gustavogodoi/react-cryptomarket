@@ -31,10 +31,13 @@ const coinState = (state = initialState, action) => {
         coinList: sortFunction(state.sort, action.result)
       });
     case actions.UPDATE_SORT:
-      return Object.assign({}, state, { sort: action.param });
-    case actions.GET_COIN_LIST:
+      const sortedList = Object.assign(
+        [],
+        sortFunction(action.param, state.coinList)
+      );
       return Object.assign({}, state, {
-        coinList: sortFunction(state.sort, state.coinList)
+        sort: action.param,
+        coinList: sortedList
       });
     default:
       return state;

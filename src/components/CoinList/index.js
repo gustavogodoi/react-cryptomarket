@@ -5,7 +5,7 @@ import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
 import * as st from "./style";
 
-const CoinList = ({ list, sort, updateSort, view }) => {
+const CoinList = ({ list, sort, view }) => {
   let displayList;
 
   if (!list || !list.length) {
@@ -31,7 +31,7 @@ const CoinList = ({ list, sort, updateSort, view }) => {
   return (
     <st.List>
       <st.Menu>
-        <Sort sort={sort} updateSort={updateSort} />
+        <Sort sort={sort} />
       </st.Menu>
       {displayList}
     </st.List>
