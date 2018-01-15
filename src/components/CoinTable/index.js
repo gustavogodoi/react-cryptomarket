@@ -80,7 +80,7 @@ export class CoinTable extends Component {
                     target="_blank"
                   >
                     <st.NameFull>{`${coin.name} (${coin.symbol})`}</st.NameFull>
-                    <st.NameSmall>{`${coin.symbol}`}</st.NameSmall>
+                    <st.NameSmall>{`${coin.name}`}</st.NameSmall>
                   </a>
                 </st.ItemNameWrapper>
               </st.ListItem>

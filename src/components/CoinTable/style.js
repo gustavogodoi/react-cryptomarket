@@ -66,7 +66,7 @@ export const ListItem = styled.div`
     alignRight.includes(props.type)
       ? "right"
       : alignCenter.includes(props.type) ? "center" : "left"};
-  padding-right: 5px;
+  margin-right: 5px;
   width: ${props =>
     widthHeader[props.type] -
     widthHeader[props.type] / 100 * 30}px; //30% smaller for mobile
