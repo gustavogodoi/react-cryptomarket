@@ -8,11 +8,11 @@
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-flip-move": "^2.10.2",
+    "react-flip-move": "3.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
+    "react-scripts": "1.1.0",
     "redux": "^3.7.2",
     "redux-saga": "1.0.0-beta.0",
     "styled-components": "^2.2.3"
@@ -22,6 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && mv build/index.html build/200.html && surge build bitcoin-react.surge.sh"
+    "deploy":
+      "npm run build && mv build/index.html build/200.html && surge build bitcoin-react.surge.sh"
   }
 }

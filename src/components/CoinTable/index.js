@@ -16,55 +16,55 @@ export class CoinTable extends Component {
     return (
       <st.ListWrapper>
         <st.ListHeader>
-          <st.ListItem
+          <st.ListItemHeader
             type="name"
             selected={sort === "name"}
             onClick={() => this.updateSort("name")}
           >
             Name
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="value"
             selected={sort === "price_eur"}
             onClick={() => this.updateSort("price_eur")}
           >
             Price
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="mktCap"
             selected={sort === "market_cap_eur"}
             onClick={() => this.updateSort("market_cap_eur")}
           >
             Market Cap
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="volume24h"
             selected={sort === "24h_volume_eur"}
             onClick={() => this.updateSort("24h_volume_eur")}
           >
             24h Volume
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="pct1h"
             selected={sort === "percent_change_1h"}
             onClick={() => this.updateSort("percent_change_1h")}
           >
             1h
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="pct24h"
             selected={sort === "percent_change_24h"}
             onClick={() => this.updateSort("percent_change_24h")}
           >
             24h
-          </st.ListItem>
-          <st.ListItem
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="pct7d"
             selected={sort === "percent_change_7d"}
             onClick={() => this.updateSort("percent_change_7d")}
           >
             7d
-          </st.ListItem>
+          </st.ListItemHeader>
         </st.ListHeader>
         <FlipMove duration={300} typeName="div">
           {list.map(coin => (
