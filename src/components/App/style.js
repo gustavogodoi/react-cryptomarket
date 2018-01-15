@@ -9,7 +9,6 @@ injectGlobal`
 
   body {
     font-family: "Montserrat";
-    margin: 0 15px;
     padding: 0;
     background-color: #F9F9F9
   }

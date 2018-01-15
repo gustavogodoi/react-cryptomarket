@@ -3,7 +3,8 @@ import * as actions from "../actions";
 const initialState = {
   coinList: {},
   loading: false,
-  sort: "market_cap_eur"
+  sort: "market_cap_eur",
+  lastUpdate: new Date()
 };
 
 const sortAsc = ["rank", "id", "name"];
@@ -29,7 +30,8 @@ const coinState = (state = initialState, action) => {
     case actions.LOAD_COIN_LIST_SUCCESS:
       return Object.assign({}, state, {
         loading: false,
-        coinList: sortFunction(state.sort, action.result)
+        coinList: sortFunction(state.sort, action.result),
+        lastUpdate: new Date()
       });
     case actions.UPDATE_SORT:
       const sortedList = Object.assign(

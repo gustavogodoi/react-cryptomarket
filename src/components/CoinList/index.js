@@ -4,7 +4,7 @@ import CoinCard from "../CoinCard";
 import CoinTable from "../CoinTable";
 import * as st from "./style";
 
-const CoinList = ({ list, view }) => {
+const CoinList = ({ list, view, lastUpdate }) => {
   let displayList;
   let displaySort;
 
@@ -34,6 +34,10 @@ const CoinList = ({ list, view }) => {
 
   return (
     <st.List>
+      <st.UpdateWrapper>
+        <span>*Last Update: </span>
+        <span>{lastUpdate}</span>
+      </st.UpdateWrapper>
       {displaySort}
       {displayList}
     </st.List>

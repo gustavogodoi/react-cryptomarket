@@ -14,7 +14,11 @@ export class ListPage extends Component {
     const view = this.props.match.params.view || "table";
     return (
       <div>
-        <CoinList list={this.props.list} view={view} />
+        <CoinList
+          list={this.props.list}
+          view={view}
+          lastUpdate={this.props.lastUpdate.toLocaleTimeString()}
+        />
       </div>
     );
   }
@@ -22,7 +26,8 @@ export class ListPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.coinState.coinList
+    list: state.coinState.coinList,
+    lastUpdate: state.coinState.lastUpdate
   };
 };
 

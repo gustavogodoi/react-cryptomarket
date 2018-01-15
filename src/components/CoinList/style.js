@@ -4,6 +4,12 @@ export const List = styled.div`
   padding-top: 10px;
 `;
 
+export const UpdateWrapper = styled.div`
+  width: 100%;
+  text-align: right;
+  font-size: 10px;
+`;
+
 export const GridWrapper = styled.div`
   min-height: 300px;
   padding: 0 15px 30px 15px;
