@@ -21,7 +21,7 @@ injectGlobal`
 
 export const Wrapper = styled.div`
   display: flex;
-  height: 100vh;
+  height: 98vh;
   flex-direction: column;
   justify-content: space-between;
 `;

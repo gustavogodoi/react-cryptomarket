@@ -10,19 +10,6 @@ class MyWalletPage extends Component {
     }
   }
 
-  state = {
-    quantity: "",
-    pricePaid: ""
-  };
-
-  handleChangeQtd = event => {
-    this.setState({ quantity: event.target.value });
-  };
-
-  handleChangePricePaid = event => {
-    this.setState({ pricePaid: event.target.value });
-  };
-
   render() {
     return <MyWallet list={this.props.list} />;
   }
