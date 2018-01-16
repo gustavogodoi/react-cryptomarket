@@ -6,6 +6,16 @@
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@types/jss/-/jss-9.3.0.tgz#0f8484fd03ded206917be27b58217f274a0ad59f"
 
+"@types/react-transition-group@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-2.0.6.tgz#8903fa2cf540ba454461590bff811a787889617c"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  version "16.0.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -876,7 +886,7 @@ babel-preset-jest@^20.0.3:
   dependencies:
     babel-plugin-jest-hoist "^20.0.3"
 
-babel-preset-react-app@^3.1.1:
+babel-preset-react-app@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/babel-preset-react-app/-/babel-preset-react-app-3.1.1.tgz#d3f06a79742f0e89d7afcb72e282d9809c850920"
   dependencies:
@@ -1708,12 +1718,6 @@ css-vendor@^0.3.8:
   dependencies:
     is-in-browser "^1.0.2"
 
-css-vendor@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/css-vendor/-/css-vendor-1.0.0.tgz#7d8883f781981d9fd6d7630b7fc5ff3a23157347"
-  dependencies:
-    is-in-browser "^1.0.2"
-
 css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
@@ -1915,9 +1919,9 @@ detect-node@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127"
 
-detect-port-alt@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/detect-port-alt/-/detect-port-alt-1.1.5.tgz#a1aa8fc805a4a5df9b905b7ddc7eed036bcce889"
+detect-port-alt@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/detect-port-alt/-/detect-port-alt-1.1.3.tgz#a4d2f061d757a034ecf37c514260a98750f2b131"
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
@@ -2028,10 +2032,6 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv-expand@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-4.0.1.tgz#68fddc1561814e0a10964111057ff138ced7d7a8"
-
 dotenv@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
@@ -2140,13 +2140,13 @@ es-to-primitive@^1.1.1:
     is-symbol "^1.0.1"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
-  version "0.10.37"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.37.tgz#0ee741d148b80069ba27d020393756af257defc3"
+  version "0.10.38"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.38.tgz#fa7d40d65bbc9bb8a67e1d3f9cc656a00530eed3"
   dependencies:
-    es6-iterator "~2.0.1"
+    es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
 
-es6-iterator@^2.0.1, es6-iterator@~2.0.1:
+es6-iterator@^2.0.1, es6-iterator@~2.0.1, es6-iterator@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.3.tgz#a7de889141a05a94b0854403b2d0a0fbfa98f3b7"
   dependencies:
@@ -2223,7 +2223,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@^2.1.0:
+eslint-config-react-app@^2.0.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-2.1.0.tgz#23c909f71cbaff76b945b831d2d814b8bde169eb"
 
@@ -2738,13 +2738,6 @@ fs-extra@^0.30.0:
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
-
-fsevents@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.1.2.tgz#3282b713fb3ad80ede0e9fcf4611b5aa6fc033f4"
-  dependencies:
-    nan "^2.3.0"
-    node-pre-gyp "^0.6.36"
 
 fsevents@^1.0.0:
   version "1.1.3"
@@ -3987,12 +3980,6 @@ jss-vendor-prefixer@^7.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss-vendor-prefixer@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-8.0.0.tgz#5ce6275bf63c1af2a0b7164c3ecdb68dd7bb1d22"
-  dependencies:
-    css-vendor "^1.0.0"
-
 jss@^9.3.2, jss@^9.3.3:
   version "9.5.1"
   resolved "https://registry.yarnpkg.com/jss/-/jss-9.5.1.tgz#c869f38cdc44a32f4425fe007ea46b8891536326"
@@ -4224,10 +4211,11 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
 material-ui@^v1.0.0-beta.26:
-  version "1.0.0-beta.28"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.28.tgz#dd78553ea2de2b028699fe9dad4c880a2e10f670"
+  version "1.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.29.tgz#21ddf110d7aae4a6582584fc10ce948f144b1f2b"
   dependencies:
     "@types/jss" "^9.3.0"
+    "@types/react-transition-group" "^2.0.6"
     babel-runtime "^6.26.0"
     brcast "^3.0.1"
     classnames "^2.2.5"
@@ -4240,7 +4228,7 @@ material-ui@^v1.0.0-beta.26:
     jss-global "^3.0.0"
     jss-nested "^6.0.1"
     jss-props-sort "^6.0.0"
-    jss-vendor-prefixer "^8.0.0"
+    jss-vendor-prefixer "^7.0.0"
     keycode "^2.1.9"
     lodash "^4.2.0"
     normalize-scroll-left "^0.1.2"
@@ -4499,7 +4487,7 @@ node-notifier@^5.0.2:
     shellwords "^0.1.1"
     which "^1.3.0"
 
-node-pre-gyp@^0.6.36, node-pre-gyp@^0.6.39:
+node-pre-gyp@^0.6.39:
   version "0.6.39"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.39.tgz#c00e96860b23c0e1420ac7befc5044e1d78d8649"
   dependencies:
@@ -4640,7 +4628,13 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-opn@5.2.0, opn@^5.1.0:
+opn@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/opn/-/opn-5.1.0.tgz#72ce2306a17dbea58ff1041853352b4a8fc77519"
+  dependencies:
+    is-wsl "^1.1.0"
+
+opn@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.2.0.tgz#71fdf934d6827d676cecbea1531f95d354641225"
   dependencies:
@@ -5377,23 +5371,23 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dev-utils@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.0.tgz#425ac7c9c40c2603bc4f7ab8836c1406e96bb473"
+react-dev-utils@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.1.tgz#9f2763e7bafa1a1b9c52254d2a479deec280f111"
   dependencies:
     address "1.0.3"
     babel-code-frame "6.26.0"
     chalk "1.1.3"
     cross-spawn "5.1.0"
-    detect-port-alt "1.1.5"
+    detect-port-alt "1.1.3"
     escape-string-regexp "1.0.5"
     filesize "3.5.11"
     global-modules "1.0.0"
     gzip-size "3.0.0"
     inquirer "3.3.0"
     is-root "1.0.0"
-    opn "5.2.0"
-    react-error-overlay "^4.0.0"
+    opn "5.1.0"
+    react-error-overlay "^3.0.0"
     recursive-readdir "2.2.1"
     shell-quote "1.6.1"
     sockjs-client "1.1.4"
@@ -5409,9 +5403,9 @@ react-dom@^16.1.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-error-overlay@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
+react-error-overlay@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
 react-event-listener@^0.5.0, react-event-listener@^0.5.1:
   version "0.5.3"
@@ -5476,50 +5470,6 @@ react-router@^4.2.0:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
-
-react-scripts@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.1.0.tgz#0c94b2b2e14cff2dad8919397901b5edebeba511"
-  dependencies:
-    autoprefixer "7.1.6"
-    babel-core "6.26.0"
-    babel-eslint "7.2.3"
-    babel-jest "20.0.3"
-    babel-loader "7.1.2"
-    babel-preset-react-app "^3.1.1"
-    babel-runtime "6.26.0"
-    case-sensitive-paths-webpack-plugin "2.1.1"
-    chalk "1.1.3"
-    css-loader "0.28.7"
-    dotenv "4.0.0"
-    dotenv-expand "4.0.1"
-    eslint "4.10.0"
-    eslint-config-react-app "^2.1.0"
-    eslint-loader "1.9.0"
-    eslint-plugin-flowtype "2.39.1"
-    eslint-plugin-import "2.8.0"
-    eslint-plugin-jsx-a11y "5.1.1"
-    eslint-plugin-react "7.4.0"
-    extract-text-webpack-plugin "3.0.2"
-    file-loader "1.1.5"
-    fs-extra "3.0.1"
-    html-webpack-plugin "2.29.0"
-    jest "20.0.4"
-    object-assign "4.1.1"
-    postcss-flexbugs-fixes "3.2.0"
-    postcss-loader "2.0.8"
-    promise "8.0.1"
-    raf "3.4.0"
-    react-dev-utils "^5.0.0"
-    style-loader "0.19.0"
-    sw-precache-webpack-plugin "0.11.4"
-    url-loader "0.6.2"
-    webpack "3.8.1"
-    webpack-dev-server "2.9.4"
-    webpack-manifest-plugin "1.3.2"
-    whatwg-fetch "2.0.3"
-  optionalDependencies:
-    fsevents "1.1.2"
 
 react-scrollbar-size@^2.0.2:
   version "2.0.2"
@@ -5967,8 +5917,8 @@ semver-diff@^2.0.0:
     semver "^5.0.3"
 
 "semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
 send@0.16.1:
   version "0.16.1"
@@ -6693,8 +6643,8 @@ uuid@^2.0.1, uuid@^2.0.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
 uuid@^3.0.0, uuid@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.1"

@@ -3,7 +3,7 @@ import * as actions from "../actions";
 const initialState = {
   coinList: {},
   loading: false,
-  sort: "market_cap_eur",
+  sort: "rank",
   lastUpdate: new Date()
 };
 
