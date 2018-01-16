@@ -1,8 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const CoinDiv = styled.div`
-  padding: 0 50px;
-`;
+export const CoinDiv = styled.div``;
 
 export const CoinWrapper = styled.div`
   display: flex;

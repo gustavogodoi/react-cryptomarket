@@ -1,33 +1,42 @@
-import React, { Component } from "react";
-import WalletCard from "../WalletCard";
-import * as st from "./style";
+import React, { Component } from 'react';
+import Button from 'material-ui/Button';
+import { MenuItem } from 'material-ui/Menu';
+import Select from 'material-ui/Select';
+import Input, { InputLabel } from 'material-ui/Input';
+import WalletCard from '../WalletCard';
+import * as st from './style';
 
 class MyWallet extends Component {
   constructor() {
     super();
     this.state = {
-      wallet: {}
+      wallet: {},
+      selectCoin: '',
     };
   }
 
   componentWillMount() {
     this.setState({
-      wallet: JSON.parse(localStorage.getItem("myWallet")) || {}
+      wallet: JSON.parse(localStorage.getItem('myWallet')) || {},
     });
   }
 
   addCoin = coin => {
     const wallet = { ...this.state.wallet };
+    this.setState({ selectCoin: '' });
+    if (wallet[coin] || !coin) {
+      return;
+    }
     wallet[coin] = {};
     this.setState({ wallet });
-    localStorage.setItem("myWallet", JSON.stringify(wallet));
+    localStorage.setItem('myWallet', JSON.stringify(wallet));
   };
 
   deleteCoin = coin => {
     const wallet = { ...this.state.wallet };
     delete wallet[coin];
     this.setState({ wallet });
-    localStorage.setItem("myWallet", JSON.stringify(wallet));
+    localStorage.setItem('myWallet', JSON.stringify(wallet));
   };
 
   handlerChange = (event, coin, type) => {
@@ -35,11 +44,15 @@ class MyWallet extends Component {
     const wallet = { ...this.state.wallet };
     const coinChanged = {
       ...wallet[coin],
-      [type]: value
+      [type]: value,
     };
     wallet[coin] = coinChanged;
     this.setState({ wallet });
-    localStorage.setItem("myWallet", JSON.stringify(wallet));
+    localStorage.setItem('myWallet', JSON.stringify(wallet));
+  };
+
+  handleSelectChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
@@ -60,12 +73,49 @@ class MyWallet extends Component {
           key={coin.id}
           coin={coin}
           handlerChange={this.handlerChange}
+          remoteItem={this.deleteCoin}
           wallet={this.state.wallet}
         />
       );
     });
 
-    return <st.WalletWrapper>{WalletList}</st.WalletWrapper>;
+    const selectOptions = list.map(coin => (
+      <MenuItem key={coin.id} value={coin.symbol}>
+        {coin.name}
+      </MenuItem>
+    ));
+
+    return (
+      <st.WalletWrapper>
+        <st.AddCoinWrapper>
+          {/*<st.AddCoinTitle>Add new coin:</st.AddCoinTitle>*/}
+          <st.SelectWrapper>
+            <st.FormWrapper>
+              <InputLabel htmlFor="add-coin">Add new coin:</InputLabel>
+              <Select
+                value={this.state.selectCoin}
+                onChange={this.handleSelectChange}
+                input={<Input name="selectCoin" id="add-coin" />}
+              >
+                <MenuItem value="">Select a coin</MenuItem>
+                {selectOptions}
+              </Select>
+            </st.FormWrapper>
+          </st.SelectWrapper>
+          <div>
+            <Button
+              fab
+              mini
+              aria-label="add"
+              onClick={() => this.addCoin(this.state.selectCoin)}
+            >
+              <st.AddIcon />
+            </Button>
+          </div>
+        </st.AddCoinWrapper>
+        {WalletList}
+      </st.WalletWrapper>
+    );
   }
 }
 

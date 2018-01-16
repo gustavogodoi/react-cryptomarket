@@ -1,10 +1,12 @@
-import React from "react";
-import Input, { InputLabel } from "material-ui/Input";
-import { FormControl } from "material-ui/Form";
-import * as DateFormat from "../DataFormatted";
-import * as st from "./style";
+import React from 'react';
+import Input, { InputLabel } from 'material-ui/Input';
+import IconButton from 'material-ui/IconButton';
+import DeleteIcon from 'material-ui-icons/Delete';
+import { FormControl } from 'material-ui/Form';
+import * as DateFormat from '../DataFormatted';
+import * as st from './style';
 
-const WalletCard = ({ coin, wallet, handlerChange }) => {
+const WalletCard = ({ coin, wallet, handlerChange, remoteItem }) => {
   const myWalletCoins = wallet[coin.symbol] || {};
   const currentValue =
     myWalletCoins.quantity && Number(myWalletCoins.quantity)
@@ -18,7 +20,12 @@ const WalletCard = ({ coin, wallet, handlerChange }) => {
 
   return (
     <st.CoinDiv key={coin.id}>
-      <st.CoinName>{`${coin.name} (${coin.symbol})`} </st.CoinName>
+      <st.CoinName>
+        <span>{`${coin.name} (${coin.symbol})`}</span>
+        <IconButton aria-label="delete" onClick={() => remoteItem(coin.symbol)}>
+          <DeleteIcon />
+        </IconButton>
+      </st.CoinName>
       <st.CoinWrapper>
         <div>
           <div>
@@ -29,7 +36,7 @@ const WalletCard = ({ coin, wallet, handlerChange }) => {
               <Input
                 id="quantity"
                 value={myWalletCoins.quantity}
-                onChange={e => handlerChange(e, coin.symbol, "quantity")}
+                onChange={e => handlerChange(e, coin.symbol, 'quantity')}
               />
             </FormControl>
           </div>
@@ -39,7 +46,7 @@ const WalletCard = ({ coin, wallet, handlerChange }) => {
               <Input
                 id="price-paid"
                 value={myWalletCoins.pricePaid}
-                onChange={e => handlerChange(e, coin.symbol, "pricePaid")}
+                onChange={e => handlerChange(e, coin.symbol, 'pricePaid')}
               />
             </FormControl>
           </div>
