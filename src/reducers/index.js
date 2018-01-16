@@ -7,7 +7,7 @@ const initialState = {
   lastUpdate: new Date()
 };
 
-const sortAsc = ["rank", "id", "name"];
+const sortAsc = ["id", "name"];
 
 const sortFunction = (sortParam, list) => {
   if (!list || !list.length) {
@@ -17,6 +17,8 @@ const sortFunction = (sortParam, list) => {
     if (sortAsc.includes(sortParam)) {
       if (a[sortParam] < b[sortParam]) return -1;
       if (a[sortParam] > b[sortParam]) return 1;
+    } else if (sortParam === "rank") {
+      return a[sortParam] - b[sortParam];
     }
     return b[sortParam] - a[sortParam];
   });

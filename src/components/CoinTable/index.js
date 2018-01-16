@@ -17,6 +17,13 @@ export class CoinTable extends Component {
       <st.ListWrapper>
         <st.ListHeader>
           <st.ListItemHeader
+            type="rank"
+            selected={sort === "rank"}
+            onClick={() => this.updateSort("rank")}
+          >
+            #
+          </st.ListItemHeader>
+          <st.ListItemHeader
             type="name"
             selected={sort === "name"}
             onClick={() => this.updateSort("name")}
@@ -69,6 +76,7 @@ export class CoinTable extends Component {
         <FlipMove duration={300} typeName="div">
           {list.map(coin => (
             <st.ListRow key={coin.rank}>
+              <st.ListItem type="rank">{coin.rank}</st.ListItem>
               <st.ListItem type="name">
                 <st.ItemNameWrapper>
                   <img
