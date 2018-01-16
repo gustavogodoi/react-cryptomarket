@@ -27,9 +27,7 @@ export const CardTitleWrapper = styled.div`
   padding-bottom: 5px;
 `;
 
-export const CardTitle = styled.span`
-  padding-right: 10px;
-`;
+export const CardTitle = styled.span``;
 
 export const Symbol = styled.span`
   font-weight: bold;
@@ -49,14 +47,12 @@ export const MarketCap = styled.div`
 export const CoinCap = styled.span`
   flex: 1 1 auto;
   padding-right: 5px;
+  white-space: nowrap;
+
   :nth-child(2) {
     text-align: center;
   }
   :nth-child(3) {
     text-align: right;
   }
-`;
-
-export const FavoriteWrapper = styled.span`
-  padding-right: 5px;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PctWrapper = styled.div`
+export const PctWrapper = styled.span`
   white-space: nowrap;
 `;
 

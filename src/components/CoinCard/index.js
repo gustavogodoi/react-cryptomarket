@@ -1,5 +1,4 @@
 import React from "react";
-import Favorite from "../Favorite";
 import * as Formatted from "../DataFormatted";
 import * as st from "./style";
 
@@ -15,9 +14,6 @@ const CoinCard = ({ info }) => {
         <st.InfoWrapper>
           <st.CardTitleWrapper>
             <st.CardTitle>
-              <st.FavoriteWrapper>
-                <Favorite item={info.symbol} />
-              </st.FavoriteWrapper>
               <st.Symbol>{info.symbol}</st.Symbol> | {info.name}
             </st.CardTitle>
             <st.Price>{Formatted.PriceEur(info.price_eur)}</st.Price>
