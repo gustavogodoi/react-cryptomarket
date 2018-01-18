@@ -4,20 +4,43 @@ export const CoinDiv = styled.div``;
 
 export const CoinWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 30px;
+  justify-content: space-between;
   margin-bottom: 30px;
+  padding: 0 30px 30px 30px;
   border-bottom: 1px solid lightgray;
-  flex-flow: column;
 
   @media (min-width: 700px) {
-    flex-flow: row;
   }
 `;
 
-export const CoinName = styled.div`
+export const TitleWrapper = styled.div`
+  display: flex;
   width: 100%;
-  font-size: 17px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+
+  img {
+    margin-right: 5px;
+    width: 20px;
+    height: auto;
+  }
+`;
+
+export const NameWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
+export const CoinName = styled.span`
+  display: flex;
+  align-items: center;
+`;
+
+export const BalanceWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
 
 export const Title = styled.span`

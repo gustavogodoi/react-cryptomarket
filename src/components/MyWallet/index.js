@@ -81,14 +81,19 @@ class MyWallet extends Component {
 
     const selectOptions = list.map(coin => (
       <MenuItem key={coin.id} value={coin.symbol}>
-        {coin.name}
+        <st.MenuItemWrapper>
+          <img
+            alt=""
+            src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${coin.symbol.toLowerCase()}.png`}
+          />
+          {`${coin.name} (${coin.symbol})`}
+        </st.MenuItemWrapper>
       </MenuItem>
     ));
 
     return (
       <st.WalletWrapper>
         <st.AddCoinWrapper>
-          {/*<st.AddCoinTitle>Add new coin:</st.AddCoinTitle>*/}
           <st.SelectWrapper>
             <st.FormWrapper>
               <InputLabel htmlFor="add-coin">Add new coin:</InputLabel>
