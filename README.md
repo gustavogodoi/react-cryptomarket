@@ -7,3 +7,6 @@ Check: http://bitcoin-react.surge.sh/
 </a>
 
 Created using React, Redux, Redux-Saga, Styled Components and more.
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/gustavogodoi/react-cryptomarket.svg)](https://greenkeeper.io/)
