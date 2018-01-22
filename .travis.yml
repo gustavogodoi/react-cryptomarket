@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '9'
+install:
+- yarn install
+- yarn build
+script:
+- yarn test
+cache:
+  yarn: true
+after_success:
+- sh scripts/deploy.sh
+addons:
+  ssh_known_hosts:
+  - 178.62.2.65
+before_install:
+- openssl aes-256-cbc -K $encrypted_779d064a95db_key -iv $encrypted_779d064a95db_iv
+  -in deploy-key.enc -out deploy-key -d
+- rm deploy-key.enc
+- chmod 600 deploy-key
+- mv deploy-key ~/.ssh/id_rsa

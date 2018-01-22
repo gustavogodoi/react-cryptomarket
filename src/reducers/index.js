@@ -1,13 +1,16 @@
-import * as actions from "../actions";
+import * as actions from '../actions';
 
 const initialState = {
   coinList: {},
+  coinInfo: {
+    General: {}
+  },
   loading: false,
-  sort: "rank",
+  sort: 'rank',
   lastUpdate: new Date()
 };
 
-const sortAsc = ["id", "name"];
+const sortAsc = ['id', 'name'];
 
 const sortFunction = (sortParam, list) => {
   if (!list || !list.length) {
@@ -17,7 +20,7 @@ const sortFunction = (sortParam, list) => {
     if (sortAsc.includes(sortParam)) {
       if (a[sortParam] < b[sortParam]) return -1;
       if (a[sortParam] > b[sortParam]) return 1;
-    } else if (sortParam === "rank") {
+    } else if (sortParam === 'rank') {
       return a[sortParam] - b[sortParam];
     }
     return b[sortParam] - a[sortParam];
@@ -43,6 +46,14 @@ const coinState = (state = initialState, action) => {
       return Object.assign({}, state, {
         sort: action.param,
         coinList: sortedList
+      });
+    case actions.LOAD_COIN_OVERVIEW_REQUEST:
+      return Object.assign({}, state, { loading: true });
+    case actions.LOAD_COIN_OVERVIEW_SUCCESS:
+      return Object.assign({}, state, {
+        loading: false,
+        coinInfo: action.result.Data,
+        lastUpdate: new Date()
       });
     default:
       return state;

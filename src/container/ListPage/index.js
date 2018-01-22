@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { loadCoinListRequest } from "../../actions/";
-import CoinList from "../../components/CoinList";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loadCoinListRequest } from '../../actions/';
+import CoinList from '../../components/CoinList';
 
 export class ListPage extends Component {
   componentWillMount() {
@@ -11,7 +11,7 @@ export class ListPage extends Component {
   }
 
   render() {
-    const view = this.props.match.params.view || "table";
+    const view = this.props.match.params.view || 'table';
     return (
       <div>
         <CoinList

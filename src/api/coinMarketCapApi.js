@@ -1,7 +1,6 @@
 const getCoinListApi = () => {
-  const urlApi = `https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=30`;
-  return fetch(urlApi, {
-    mode: "cors"
+  return fetch('/api/list', {
+    mode: 'cors'
   })
     .then(response => {
       return response.json();
@@ -9,4 +8,17 @@ const getCoinListApi = () => {
     .catch(error => {});
 };
 
-export { getCoinListApi };
+const getCoinOverviewApi = symbol => {
+  console.log(symbol);
+  return fetch(`/api/coin/${symbol}`, {
+    mode: 'cors'
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(error => {
+      console.error('getCoinOverviewApi', error);
+    });
+};
+
+export { getCoinListApi, getCoinOverviewApi };
