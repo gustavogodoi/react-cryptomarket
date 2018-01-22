@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router";
-import { Wrapper, BodyWrapper } from "./style";
-import Header from "../Header";
-import Menu from "../Menu";
-import Footer from "../Footer";
-import ListPage from "../../container/ListPage";
-import MyWalletPage from "../../container/MyWalletPage";
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router';
+import { Wrapper, BodyWrapper } from './style';
+import Header from '../Header';
+import Menu from '../Menu';
+import Footer from '../Footer';
+import ListPage from '../../container/ListPage';
+import MyWalletPage from '../../container/MyWalletPage';
+import AboutPage from '../../container/AboutPage';
 
 class App extends Component {
   render() {
@@ -18,7 +19,8 @@ class App extends Component {
         <BodyWrapper>
           <Switch>
             <Route exact path="/wallet" component={MyWalletPage} />
-            <Route exact path="/:view?" component={ListPage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route path="/:view?" component={ListPage} />
           </Switch>
         </BodyWrapper>
         <Footer />

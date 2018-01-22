@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const MenuWrapper = styled.div`
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(100, 50, 21, 6);
-  padding: 30px;
+  padding: 30px 0;
   text-align: center;
   white-space: nowrap;
 `;

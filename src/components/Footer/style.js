@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FooterWapper = styled.div`
   width: 100%;
@@ -7,17 +7,4 @@ export const FooterWapper = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 13px;
-`;
-
-export const Author = styled.div`
-  padding-right: 15px;
-  color: darkgray;
-`;
-
-export const Social = styled.div`
-  padding-right: 10px;
-`;
-
-export const SocialIcon = styled.img`
-  width: 18px;
 `;
