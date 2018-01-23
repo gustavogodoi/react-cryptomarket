@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-if [ $TRAVIS_BRANCH = "master" ] && [ $TRAVIS_REPO_SLUG = "gustavogodoi/react-cryptomarket"]
+if [ $TRAVIS_BRANCH = "master" ] && [ $TRAVIS_REPO_SLUG = "gustavogodoi/react-cryptomarket" ]
 then
     echo "Starting Deploy"
     openssl aes-256-cbc -K $encrypted_40d62000dcf5_key -iv $encrypted_40d62000dcf5_iv
