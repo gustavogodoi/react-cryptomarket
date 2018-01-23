@@ -5,7 +5,7 @@
   "scripts": {
     "start": "PORT=3001 nodemon ./bin/www",
     "production-start": "pm2 start app.js -i max",
-    "production-restart": "pm2 restart-all"
+    "production-restart": "pm2 restart all"
   },
   "dependencies": {
     "axios": "^0.17.1",
