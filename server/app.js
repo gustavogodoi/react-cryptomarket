@@ -29,11 +29,6 @@ app.use((req, res, next) => {
   } else next();
 });
 
-// app.get('*', (req, res) => {
-//   console.log('*');
-//   res.sendFile(path.resolve(__dirname, '../public_html', 'index.html'));
-// });
-
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   var err = new Error('Not Found');
