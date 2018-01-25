@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'material-ui/Button';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import Input, { InputLabel } from 'material-ui/Input';
@@ -53,6 +52,7 @@ class MyWallet extends Component {
 
   handleSelectChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.addCoin(event.target.value);
   };
 
   render() {
@@ -107,18 +107,8 @@ class MyWallet extends Component {
               </Select>
             </st.FormWrapper>
           </st.SelectWrapper>
-          <div>
-            <Button
-              fab
-              mini
-              aria-label="add"
-              onClick={() => this.addCoin(this.state.selectCoin)}
-            >
-              <st.AddIcon />
-            </Button>
-          </div>
         </st.AddCoinWrapper>
-        {WalletList}
+        <st.WalletListWrapper>{WalletList}</st.WalletListWrapper>
       </st.WalletWrapper>
     );
   }

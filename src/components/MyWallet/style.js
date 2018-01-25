@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { FormControl } from 'material-ui/Form';
-import { default as AddIconDefault } from 'material-ui-icons/Add';
 
 export const WalletWrapper = styled.div``;
 
@@ -30,8 +29,6 @@ export const FormWrapper = styled(FormControl)`
   }
 `;
 
-export const AddIcon = styled(AddIconDefault)``;
-
 export const MenuItemWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -40,5 +37,14 @@ export const MenuItemWrapper = styled.div`
     margin-right: 5px;
     width: 16px;
     height: auto;
+  }
+`;
+
+export const WalletListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
