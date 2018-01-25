@@ -15,11 +15,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/api', routes);
-app.use('/static/', express.static(path.join(__dirname, '../public_html')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../public_html', 'index.html'));
+let root = path.join(__dirname, '..', 'public_html/');
+app.use(express.static(root));
+app.use((req, res, next) => {
+  if (
+    req.method === 'GET' &&
+    req.accepts('html') &&
+    !req.is('json') &&
+    !req.path.includes('.')
+  ) {
+    res.sendFile('index.html', { root });
+  } else next();
 });
+
+// app.get('*', (req, res) => {
+//   console.log('*');
+//   res.sendFile(path.resolve(__dirname, '../public_html', 'index.html'));
+// });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
