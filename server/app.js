@@ -18,8 +18,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api', routes);
-
 app.use(express.static(root));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(root, 'index.html'));
+});
+
 app.use(fallback('index.html', { root }));
 
 // catch 404 and forward to error handler
