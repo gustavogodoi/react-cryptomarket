@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Card = styled.div`
   display: flex;
@@ -15,8 +15,6 @@ export const CardWrapper = styled.div`
 export const CoinImageWrapper = styled.div`
   padding-right: 10px;
 `;
-
-export const CoinImage = styled.img``;
 
 export const InfoWrapper = styled.div`
   width: 100%;

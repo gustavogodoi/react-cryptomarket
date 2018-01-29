@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadCoinOverviewRequest } from '../../actions/';
-import CoinIcon from '../../components/CoinIcon';
+import CoinIcon from '../../components/CommonFields/CoinIcon';
 import createMarkup from '../../helpers/createMarkUp';
 
 export class DetailPage extends Component {
@@ -36,12 +36,12 @@ export class DetailPage extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    coin: state.coinState.coinInfo
+    coin: state.coinState.coinInfo,
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  loadCoinOverviewRequest: symbol => dispatch(loadCoinOverviewRequest(symbol))
+  loadCoinOverviewRequest: symbol => dispatch(loadCoinOverviewRequest(symbol)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);

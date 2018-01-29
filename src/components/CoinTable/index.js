@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateSortList } from '../../actions/';
 import FlipMove from 'react-flip-move';
-import CoinIcon from '../CoinIcon';
+import CoinIcon from '../CommonFields/CoinIcon';
 import * as Formatted from '../DataFormatted';
 import * as st from './style';
 
@@ -125,12 +125,12 @@ export class CoinTable extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     sort: state.coinState.sort,
-    list: ownProps.list
+    list: ownProps.list,
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  updateSortList: param => dispatch(updateSortList(param))
+  updateSortList: param => dispatch(updateSortList(param)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinTable);

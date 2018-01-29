@@ -1,15 +1,14 @@
-import React from "react";
-import * as Formatted from "../DataFormatted";
-import * as st from "./style";
+import React from 'react';
+import CoinIcon from '../CommonFields/CoinIcon';
+import * as Formatted from '../DataFormatted';
+import * as st from './style';
 
 const CoinCard = ({ info }) => {
   return (
     <st.Card>
       <st.CardWrapper>
         <st.CoinImageWrapper>
-          <st.CoinImage
-            src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${info.symbol.toLowerCase()}.png`}
-          />
+          <CoinIcon symbol={info.symbol} />
         </st.CoinImageWrapper>
         <st.InfoWrapper>
           <st.CardTitleWrapper>
@@ -23,7 +22,7 @@ const CoinCard = ({ info }) => {
               1h: <Formatted.PctChange percentChange={info.percent_change_1h} />
             </st.CoinCap>
             <st.CoinCap>
-              24h:{" "}
+              24h:{' '}
               <Formatted.PctChange percentChange={info.percent_change_24h} />
             </st.CoinCap>
             <st.CoinCap>

@@ -3,6 +3,7 @@ import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import Input, { InputLabel } from 'material-ui/Input';
 import WalletCard from '../WalletCard';
+import CoinIcon from '../CommonFields/CoinIcon';
 import * as st from './style';
 
 class MyWallet extends Component {
@@ -82,10 +83,7 @@ class MyWallet extends Component {
     const selectOptions = list.map(coin => (
       <MenuItem key={coin.id} value={coin.symbol}>
         <st.MenuItemWrapper>
-          <img
-            alt=""
-            src={`https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/${coin.symbol.toLowerCase()}.png`}
-          />
+          <CoinIcon symbol={coin.symbol} />
           {`${coin.name} (${coin.symbol})`}
         </st.MenuItemWrapper>
       </MenuItem>
