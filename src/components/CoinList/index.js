@@ -1,8 +1,8 @@
-import React from "react";
-import Sort from "../SortDropdown";
-import CoinCard from "../CoinCard";
-import CoinTable from "../CoinTable";
-import * as st from "./style";
+import React from 'react';
+import Sort from '../SortDropdown';
+import CoinCard from '../CoinCard';
+import CoinTable from '../CoinTable';
+import * as st from './style';
 
 const CoinList = ({ list, view, lastUpdate }) => {
   let displayList;
@@ -12,7 +12,7 @@ const CoinList = ({ list, view, lastUpdate }) => {
     return <st.LoadingWrapper>Loading...</st.LoadingWrapper>;
   }
 
-  if (view === "grid") {
+  if (view === 'grid') {
     displaySort = (
       <st.Menu>
         <Sort />
